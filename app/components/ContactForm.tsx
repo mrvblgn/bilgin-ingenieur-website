@@ -1,7 +1,5 @@
 'use client';
 
-// SOLID: Single Responsibility Principle - ContactForm only handles contact form
-
 import React, { useState, useEffect } from 'react';
 import Button from './ui/Button';
 import { useLanguage } from '../contexts/LanguageContext';
