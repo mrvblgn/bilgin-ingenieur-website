@@ -1,30 +1,29 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NavigationItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [padding, setPadding] = useState({ left: 24, right: 24, top: 12, bottom: 12 });
 
   const navigationItems: NavigationItem[] = [
-    { label: t('nav.home'), href: '#home' },
-    { label: t('nav.services'), href: '#services' },
-    { label: t('nav.projects'), href: '#projects' },
-    { label: t('nav.realEstate'), href: '#real-estate' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.contact'), href: '#contact' },
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.services'), href: '/leistungen' },
+    { label: t('nav.projects'), href: '/referenzen' },
+    { label: t('nav.realEstate'), href: '/immobilien' },
+    { label: t('nav.about'), href: '/uber-uns' },
+    { label: t('nav.contact'), href: '/kontakt' },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = () => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   // Prevent body scroll when menu is open
@@ -90,12 +89,8 @@ export default function Header() {
             }}
           >
             <div className="flex items-center gap-4">
-              <a 
-                href="#home" 
-                onClick={(e) => { 
-                  e.preventDefault(); 
-                  handleNavClick('#home'); 
-                }}
+              <Link 
+                href="/"
                 className="hover:opacity-80 transition-opacity"
               >
                 <img 
@@ -103,13 +98,9 @@ export default function Header() {
                   alt="Bilgin Ingenieurbüro Logo" 
                   className="h-12 md:h-16 lg:h-20 object-contain"
                 />
-              </a>
-              <a 
-                href="#home" 
-                onClick={(e) => { 
-                  e.preventDefault(); 
-                  handleNavClick('#home'); 
-                }}
+              </Link>
+              <Link 
+                href="/"
                 className="hover:opacity-80 transition-opacity"
               >
                 <img 
@@ -117,7 +108,7 @@ export default function Header() {
                   alt="Deca Architektur Logo" 
                   className="h-12 md:h-16 lg:h-20 object-contain"
                 />
-              </a>
+              </Link>
             </div>
 
             <div className="flex items-center gap-4 md:gap-6">
@@ -228,14 +219,13 @@ export default function Header() {
           <div className="flex flex-col justify-center h-full items-center gap-3 md:gap-4 lg:gap-5">
             {navigationItems.map((item) => {
               return (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
-                  onClick={(e) => { 
-                    e.preventDefault(); 
-                    handleNavClick(item.href); 
-                  }}
-                  className="text-white hover:text-gray-200 transition-all cursor-pointer tracking-wider text-lg md:text-xl lg:text-2xl font-light opacity-80"
+                  onClick={handleNavClick}
+                  className={`text-white hover:text-gray-200 transition-all cursor-pointer tracking-wider text-lg md:text-xl lg:text-2xl font-light opacity-80 ${
+                    pathname === item.href ? 'opacity-100 font-medium' : ''
+                  }`}
                   style={{ 
                     fontFamily: '"The Amoret Collection Sans", Helvetica, Arial, Lucida, sans-serif',
                     letterSpacing: '0.1em',
@@ -243,7 +233,7 @@ export default function Header() {
                   }}
                 >
                   {item.label}
-                </a>
+                </Link>
               );
             })}
           </div>
