@@ -8,6 +8,7 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [padding, setPadding] = useState({ left: 24, right: 24, top: 12, bottom: 12 });
 
   const navigationItems: NavigationItem[] = [
     { label: t('nav.home'), href: '#home' },
@@ -41,11 +42,7 @@ export default function Header() {
   // Handle scroll to change header appearance
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.getElementById('home');
-      if (heroSection) {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        setIsScrolled(window.scrollY > heroBottom - 100);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,18 +51,45 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle responsive padding
+  useEffect(() => {
+    const updatePadding = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setPadding({ left: 72, right: 72, top: 12, bottom: 12 });
+      } else if (width >= 768) {
+        setPadding({ left: 44, right: 44, top: 12, bottom: 12 });
+      } else {
+        setPadding({ left: 24, right: 24, top: 12, bottom: 12 });
+      }
+    };
+
+    updatePadding();
+    window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);
+
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
+          isScrolled ? 'bg-white/80 shadow-md' : 'bg-transparent'
         }`}
+        style={{ margin: 0, padding: 0 }}
       >
-        <nav className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className={`text-2xl md:text-3xl font-bold transition-colors ${
-              isScrolled ? 'text-black' : 'text-white drop-shadow-lg'
-            }`}>
+        <nav className="p-0 w-full">
+          <div 
+            className="flex items-center justify-between w-full"
+            style={{ 
+              paddingLeft: `${padding.left}px`, 
+              paddingRight: `${padding.right}px`,
+              paddingTop: `${padding.top}px`,
+              paddingBottom: `${padding.bottom}px`,
+              display: 'flex',
+              boxSizing: 'border-box'
+            }}
+          >
+            <div className="flex items-center gap-4">
               <a 
                 href="#home" 
                 onClick={(e) => { 
@@ -74,39 +98,49 @@ export default function Header() {
                 }}
                 className="hover:opacity-80 transition-opacity"
               >
-                MACH
+                <img 
+                  src="/assets/Bilgin_Ingenieurbüro_Logo_page-0001.png" 
+                  alt="Bilgin Ingenieurbüro Logo" 
+                  className="h-12 md:h-16 lg:h-20 object-contain"
+                />
+              </a>
+              <a 
+                href="#home" 
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  handleNavClick('#home'); 
+                }}
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  src="/assets/deca_architektur_logo_page-0001.png" 
+                  alt="Deca Architektur Logo" 
+                  className="h-12 md:h-16 lg:h-20 object-contain"
+                />
               </a>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 md:gap-6">
               {/* Language Selector - Hidden when menu is open */}
               {!isMenuOpen && (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => setLanguage('TR')}
-                    className={`text-sm font-light transition-opacity ${
-                      language === 'TR' 
-                        ? isScrolled 
-                          ? 'text-black opacity-100' 
-                          : 'text-white opacity-100'
-                        : isScrolled
-                          ? 'text-gray-500 opacity-70'
-                          : 'text-white opacity-50'
+                    className={`text-base md:text-lg font-normal transition-opacity ${
+                      language === 'TR'
+                        ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'
+                        : isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'
                     } hover:opacity-100`}
                   >
                     TR
                   </button>
-                  <span className={isScrolled ? 'text-gray-400' : 'text-white opacity-50'}>|</span>
+                  <span className={`text-xl md:text-2xl ${isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'}`}>|</span>
                   <button
                     onClick={() => setLanguage('DE')}
-                    className={`text-sm font-light transition-opacity ${
+                    className={`text-base md:text-lg font-normal transition-opacity ${
                       language === 'DE'
-                        ? isScrolled 
-                          ? 'text-black opacity-100' 
-                          : 'text-white opacity-100'
-                        : isScrolled
-                          ? 'text-gray-500 opacity-70'
-                          : 'text-white opacity-50'
+                        ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'
+                        : isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'
                     } hover:opacity-100`}
                   >
                     DE
@@ -117,14 +151,14 @@ export default function Header() {
               {/* Hamburger Menu Button - Hidden when menu is open */}
               {!isMenuOpen && (
                 <button
-                  className={`z-50 relative transition-colors ${
+                  className={`z-50 relative transition-opacity hover:opacity-80 ${
                     isScrolled ? 'text-black' : 'text-white'
                   }`}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   aria-label="Toggle menu"
                 >
                   <svg
-                    className="w-6 h-6"
+                    className="w-7 h-7 md:w-8 md:h-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -153,7 +187,7 @@ export default function Header() {
         {/* Dark overlay - only on right half */}
         <div 
           className={`absolute top-0 right-0 h-full w-1/2 bg-black transition-opacity duration-500 ${
-            isMenuOpen ? 'opacity-90' : 'opacity-0'
+            isMenuOpen ? 'opacity-80' : 'opacity-0'
           }`}
         />
 
@@ -191,7 +225,7 @@ export default function Header() {
           </div>
 
           {/* Navigation items with equal font sizes and centered */}
-          <div className="flex flex-col justify-center h-full items-center gap-6 md:gap-8 lg:gap-10">
+          <div className="flex flex-col justify-center h-full items-center gap-3 md:gap-4 lg:gap-5">
             {navigationItems.map((item) => {
               return (
                 <a
@@ -201,10 +235,11 @@ export default function Header() {
                     e.preventDefault(); 
                     handleNavClick(item.href); 
                   }}
-                  className="text-white hover:text-white transition-all cursor-pointer font-serif tracking-wider text-2xl md:text-3xl lg:text-4xl hover:opacity-80 font-light"
+                  className="text-white hover:text-gray-200 transition-all cursor-pointer tracking-wider text-lg md:text-xl lg:text-2xl font-light opacity-80"
                   style={{ 
-                    fontFamily: 'Georgia, "Times New Roman", serif',
-                    letterSpacing: '0.1em'
+                    fontFamily: '"The Amoret Collection Sans", Helvetica, Arial, Lucida, sans-serif',
+                    letterSpacing: '0.1em',
+                    color: '#ffffff',
                   }}
                 >
                   {item.label}
