@@ -1,53 +1,54 @@
-interface Service {
-  title: string;
-}
+'use client';
 
-interface ServiceCategoryProps {
-  title: string;
-  services: Service[];
-}
+// SOLID: Single Responsibility Principle - ServicesSection only handles services display
 
-function ServiceCategory({ title, services }: ServiceCategoryProps) {
-  return (
-    <div className="mb-12">
-      <h3 className="text-2xl font-light text-black dark:text-white mb-6 uppercase tracking-wider">
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="text-zinc-700 dark:text-zinc-300 text-lg"
-          >
-            {service.title}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ServicesSection() {
-  const services: ServiceCategoryProps[] = [
+  const { t } = useLanguage();
+
+  const services = [
     {
-      title: "Hizmetlerimiz",
-      services: [
-        { title: "Proje Geliştirme" },
-        { title: "Mimarlık" },
-        { title: "İç Mimarlık" },
-        { title: "Proje Yönetimi" }
-      ]
-    }
+      id: '1',
+      title: t('services.service1.title'),
+      description: t('services.service1.description'),
+    },
+    {
+      id: '2',
+      title: t('services.service2.title'),
+      description: t('services.service2.description'),
+    },
+    {
+      id: '3',
+      title: t('services.service3.title'),
+      description: t('services.service3.description'),
+    },
+    {
+      id: '4',
+      title: t('services.service4.title'),
+      description: t('services.service4.description'),
+    },
   ];
 
   return (
-    <section id="hizmetler" className="py-20 px-4 bg-white dark:bg-black">
-      <div className="container mx-auto max-w-6xl">
-        {services.map((category, index) => (
-          <ServiceCategory key={index} {...category} />
-        ))}
+    <section id="services" className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          {t('services.title')}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-

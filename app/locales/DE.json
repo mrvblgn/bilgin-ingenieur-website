@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "HOME",
+    "services": "LEISTUNGEN",
+    "projects": "REFERENZEN",
+    "realEstate": "IMMOBILIEN",
+    "about": "ÜBER UNS",
+    "contact": "KONTAKT"
+  },
+  "hero": {
+    "title": "Innovative Architektur, die Natur und Luxus vereint",
+    "subtitle": "Entdecken Sie maßgeschneiderte Chalets und exklusive Designlösungen von MACH Architekten in den Kitzbüheler Alpen und der bayrischen Seenregion.",
+    "cta": "Erleben Sie unsere Immobilien"
+  },
+  "about": {
+    "title": "Über uns",
+    "member1": {
+      "quote": "wir gestalten zuhause für generationen",
+      "description": "Unsere Leidenschaft liegt in der Realisierung hochwertiger Wohnbauten. Als Generalplaner bieten wir Ihnen eine kompromisslose und umfassende Betreuung, um Ihre Traumimmobilie zu verwirklichen. Wir begleiten Sie von der ersten Idee bis zur bezugsfertigen Immobilie und decken dabei den gesamten Planungsprozess ab.",
+      "role": "Geschäftsführer"
+    },
+    "member2": {
+      "quote": "Mit unseren Kitzbüheler Wurzeln Stehen wir für Tradition, gepaart mit modernsten Techniken.",
+      "description": "Für uns steht die perfekte Balance zwischen Ästhetik und Funktionalität im Vordergrund. Jedes Projekt ist ein Zeugnis unserer Leidenschaft für Architektur und unserer Verpflichtung zu höchster Qualität. Lassen Sie uns gemeinsam Ihre Vision verwirklichen und außergewöhnliche Lebensräume schaffen.",
+      "role": "Geschäftsführer"
+    }
+  },
+  "services": {
+    "title": "LEISTUNGEN",
+    "service1": {
+      "title": "PROJEKTENTWICKLUNG",
+      "description": "Von der ersten Idee bis zur Realisierung begleiten wir Sie durch den gesamten Entwicklungsprozess."
+    },
+    "service2": {
+      "title": "ARCHITEKTUR",
+      "description": "Innovative Architektur, die Tradition und Moderne harmonisch verbindet."
+    },
+    "service3": {
+      "title": "INNENARCHITEKTUR",
+      "description": "Maßgeschneiderte Innenarchitektur für außergewöhnliche Lebensräume."
+    },
+    "service4": {
+      "title": "PROJEKTMANAGEMENT",
+      "description": "Professionelles Projektmanagement für eine kompromisslose Umsetzung Ihrer Vision."
+    }
+  },
+  "projects": {
+    "title": "REFERENZEN",
+    "completed": "Realisierte Immobilien",
+    "planning": "IMMOBILIEN IN PLANUNG"
+  },
+  "contact": {
+    "title": "KONTAKT",
+    "salutation": "Anrede",
+    "mr": "Herr",
+    "mrs": "Frau",
+    "interest": "Ich interessiere mich für",
+    "interest1": "Immobilien",
+    "interest2": "Architektur",
+    "interest3": "Innenarchitektur",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "captcha": "Wie lautet die Hauptstadt von Österreich?",
+    "privacy": "Ich stimme der elektronischen Verarbeitung meiner Daten zum Zwecke der Bearbeitung meiner Anfrage gemäß der Datenschutzerklärung zu.*",
+    "submit": "ABSENDEN",
+    "privacyError": "Bitte akzeptieren Sie die Datenschutzerklärung.",
+    "captchaError": "Bitte beantworten Sie die Sicherheitsfrage korrekt.",
+    "success": "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+  },
+  "footer": {
+    "references": "REFERENZEN",
+    "realEstate": "IMMOBILIEN",
+    "services": "LEISTUNGEN",
+    "contact": "KONTAKT"
+  }
+}

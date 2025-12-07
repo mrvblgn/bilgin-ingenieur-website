@@ -6,9 +6,12 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
+/**
+ * Ana sayfa bileşeni
+ */
 export default function Home() {
   return (
-    <>
+    <main className="min-h-screen">
       <Header />
       <Hero />
       <AboutSection />
@@ -16,6 +19,6 @@ export default function Home() {
       <ProjectsSection />
       <ContactForm />
       <Footer />
-    </>
+    </main>
   );
 }

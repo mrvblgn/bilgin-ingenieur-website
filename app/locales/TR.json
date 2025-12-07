@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "ANA SAYFA",
+    "services": "HİZMETLER",
+    "projects": "REFERANSLAR",
+    "realEstate": "GAYRİMENKUL",
+    "about": "HAKKIMIZDA",
+    "contact": "İLETİŞİM"
+  },
+  "hero": {
+    "title": "Doğa ve Lüksü Birleştiren Yenilikçi Mimari",
+    "subtitle": "MACH Mimarlık'ın Kitzbühel Alpleri ve Bavyera Göl Bölgesi'ndeki özel tasarım çözümleri ve özel chalet'lerini keşfedin.",
+    "cta": "Gayrimenkullerimizi Keşfedin"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "member1": {
+      "quote": "nesiller için ev tasarlıyoruz",
+      "description": "Tutkumuz, yüksek kaliteli konut projelerinin gerçekleştirilmesinde yatmaktadır. Genel planlayıcı olarak, hayalinizdeki gayrimenkulü gerçekleştirmek için size kapsamlı ve ödünsüz bir hizmet sunuyoruz. İlk fikirden teslimata hazır gayrimenkulünüze kadar sizi yönlendiriyor ve tüm planlama sürecini kapsıyoruz.",
+      "role": "Genel Müdür"
+    },
+    "member2": {
+      "quote": "Kitzbühel köklerimizle geleneği, en modern tekniklerle birleştiriyoruz.",
+      "description": "Bizim için estetik ve işlevsellik arasındaki mükemmel denge ön plandadır. Her proje, mimariye olan tutkumuzun ve en yüksek kaliteye olan bağlılığımızın bir kanıtıdır. Birlikte vizyonunuzu gerçekleştirelim ve olağanüstü yaşam alanları yaratalım.",
+      "role": "Genel Müdür"
+    }
+  },
+  "services": {
+    "title": "HİZMETLER",
+    "service1": {
+      "title": "PROJE GELİŞTİRME",
+      "description": "İlk fikirden gerçekleştirmeye kadar tüm geliştirme sürecinde size eşlik ediyoruz."
+    },
+    "service2": {
+      "title": "MİMARİ",
+      "description": "Geleneği ve moderni uyumlu bir şekilde birleştiren yenilikçi mimari."
+    },
+    "service3": {
+      "title": "İÇ MİMARİ",
+      "description": "Olağanüstü yaşam alanları için özel iç mimari."
+    },
+    "service4": {
+      "title": "PROJE YÖNETİMİ",
+      "description": "Vizyonunuzun ödünsüz uygulanması için profesyonel proje yönetimi."
+    }
+  },
+  "projects": {
+    "title": "REFERANSLAR",
+    "completed": "Tamamlanan Gayrimenkuller",
+    "planning": "PLANLAMA AŞAMASINDAKİ GAYRİMENKULLER"
+  },
+  "contact": {
+    "title": "İLETİŞİM",
+    "salutation": "Hitap",
+    "mr": "Bay",
+    "mrs": "Bayan",
+    "interest": "İlgilendiğim alan",
+    "interest1": "Gayrimenkul",
+    "interest2": "Mimari",
+    "interest3": "İç Mimari",
+    "name": "Ad",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "captcha": "Avusturya'nın başkenti nedir?",
+    "privacy": "İsteğimin işlenmesi amacıyla verilerimin elektronik olarak işlenmesine, gizlilik politikasına uygun olarak izin veriyorum.*",
+    "submit": "GÖNDER",
+    "privacyError": "Lütfen gizlilik politikasını kabul edin.",
+    "captchaError": "Lütfen güvenlik sorusunu doğru yanıtlayın.",
+    "success": "Mesajınız için teşekkür ederiz! En kısa sürede size dönüş yapacağız."
+  },
+  "footer": {
+    "references": "REFERANSLAR",
+    "realEstate": "GAYRİMENKUL",
+    "services": "HİZMETLER",
+    "contact": "İLETİŞİM"
+  }
+}

@@ -1,62 +1,115 @@
-interface Project {
-  id: string;
-  title: string;
-  category: string;
-  imageUrl?: string;
-}
+'use client';
 
-interface ProjectGridProps {
-  title: string;
-  projects: Project[];
-}
+// SOLID: Single Responsibility Principle - ProjectsSection handles project display
+// SOLID: Dependency Inversion Principle - Uses ProjectService interface
 
-function ProjectGrid({ title, projects }: ProjectGridProps) {
-  return (
-    <div className="mb-16">
-      <h2 className="text-3xl font-light text-black dark:text-white mb-8 uppercase tracking-wider">
-        {title}
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="aspect-square bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center group cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
-          >
-            <div className="text-center p-4">
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2 uppercase">
-                {project.category}
-              </p>
-              <p className="text-lg text-black dark:text-white font-medium">
-                {project.title}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+import React, { useState, useEffect } from 'react';
+import { ProjectService } from '../services/ProjectService';
+import { ProjectRepository } from '../repositories/ProjectRepository';
+import Card from './ui/Card';
+import Pagination from './ui/Pagination';
+import { useLanguage } from '../contexts/LanguageContext';
+
+const projectService = new ProjectService(new ProjectRepository());
+const ITEMS_PER_PAGE = 6;
 
 export default function ProjectsSection() {
-  const completedProjects: Project[] = [
-    { id: '1', title: 'Proje 1', category: 'Tamamlanan' },
-    { id: '2', title: 'Proje 2', category: 'Tamamlanan' },
-    { id: '3', title: 'Proje 3', category: 'Tamamlanan' },
-  ];
+  const { t } = useLanguage();
+  const [completedProjects, setCompletedProjects] = useState({
+    projects: [] as any[],
+    totalPages: 0,
+    currentPage: 1,
+    totalItems: 0,
+  });
+  
+  const [planningProjects, setPlanningProjects] = useState({
+    projects: [] as any[],
+    totalPages: 0,
+    currentPage: 1,
+    totalItems: 0,
+  });
 
-  const plannedProjects: Project[] = [
-    { id: '4', title: 'Proje 4', category: 'Planlanan' },
-    { id: '5', title: 'Proje 5', category: 'Planlanan' },
-    { id: '6', title: 'Proje 6', category: 'Planlanan' },
-  ];
+  const loadCompletedProjects = (page: number) => {
+    const result = projectService.getPaginatedProjects(page, ITEMS_PER_PAGE, 'completed');
+    setCompletedProjects(result);
+  };
+
+  const loadPlanningProjects = (page: number) => {
+    const result = projectService.getPaginatedProjects(page, ITEMS_PER_PAGE, 'planning');
+    setPlanningProjects(result);
+  };
+
+  useEffect(() => {
+    loadCompletedProjects(1);
+    loadPlanningProjects(1);
+  }, []);
 
   return (
-    <section id="referanslar" className="py-20 px-4 bg-zinc-50 dark:bg-zinc-900">
-      <div className="container mx-auto max-w-6xl">
-        <ProjectGrid title="Tamamlanan Projeler" projects={completedProjects} />
-        <ProjectGrid title="Planlanan Projeler" projects={plannedProjects} />
-      </div>
-    </section>
+    <>
+      <section id="projects" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            {t('projects.title')}
+          </h2>
+          <h3 className="text-2xl font-semibold mb-8">{t('projects.completed')}</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {completedProjects.projects.map((project) => (
+              <Card key={project.id} className="cursor-pointer">
+                <div className="h-48 bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400">Projektbild</span>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold mb-2">{project.title}</h4>
+                  <p className="text-gray-600 mb-2">{project.description}</p>
+                  {project.location && (
+                    <p className="text-sm text-gray-500">{project.location}</p>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {completedProjects.totalPages > 1 && (
+            <Pagination
+              currentPage={completedProjects.currentPage}
+              totalPages={completedProjects.totalPages}
+              onPageChange={loadCompletedProjects}
+            />
+          )}
+        </div>
+      </section>
+
+      <section id="real-estate" className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-semibold mb-8">{t('projects.planning')}</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {planningProjects.projects.map((project) => (
+              <Card key={project.id} className="cursor-pointer">
+                <div className="h-48 bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400">Projektbild</span>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold mb-2">{project.title}</h4>
+                  <p className="text-gray-600 mb-2">{project.description}</p>
+                  {project.location && (
+                    <p className="text-sm text-gray-500">{project.location}</p>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {planningProjects.totalPages > 1 && (
+            <Pagination
+              currentPage={planningProjects.currentPage}
+              totalPages={planningProjects.totalPages}
+              onPageChange={loadPlanningProjects}
+            />
+          )}
+        </div>
+      </section>
+    </>
   );
 }
-

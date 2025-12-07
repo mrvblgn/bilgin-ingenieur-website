@@ -1,205 +1,181 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+// SOLID: Single Responsibility Principle - ContactForm only handles contact form
 
-interface FormData {
-  salutation: string;
-  interest: string;
-  name: string;
-  email: string;
-  message: string;
-  captcha: string;
-  privacy: boolean;
-}
-
-const initialFormData: FormData = {
-  salutation: '',
-  interest: '',
-  name: '',
-  email: '',
-  message: '',
-  captcha: '',
-  privacy: false,
-};
+import React, { useState, useEffect } from 'react';
+import Button from './ui/Button';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t, language } = useLanguage();
+  const [formData, setFormData] = useState({
+    salutation: language === 'DE' ? t('contact.mr') : t('contact.mr'),
+    interest: language === 'DE' ? t('contact.interest1') : t('contact.interest1'),
+    name: '',
+    email: '',
+    message: '',
+    privacyAccepted: false,
+    captcha: '',
+  });
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value, type } = e.target;
-    setFormData((prev) => ({
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const captchaQuestion = t('contact.captcha');
+  const correctAnswer = language === 'DE' ? 'Wien' : 'Viyana';
+
+  useEffect(() => {
+    setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+      salutation: language === 'DE' ? t('contact.mr') : t('contact.mr'),
+      interest: language === 'DE' ? t('contact.interest1') : t('contact.interest1'),
     }));
-  };
+  }, [language, t]);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Form submission logic here
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    if (!formData.privacyAccepted) {
+      alert(t('contact.privacyError'));
+      return;
+    }
+
+    if (captchaAnswer.trim().toLowerCase() !== correctAnswer.toLowerCase()) {
+      alert(t('contact.captchaError'));
+      return;
+    }
+
+    console.log('Form submitted:', formData);
+    alert(t('contact.success'));
     
-    setIsSubmitting(false);
-    setFormData(initialFormData);
-    alert('Mesajınız gönderildi!');
+    setFormData({
+      salutation: language === 'DE' ? t('contact.mr') : t('contact.mr'),
+      interest: language === 'DE' ? t('contact.interest1') : t('contact.interest1'),
+      name: '',
+      email: '',
+      message: '',
+      privacyAccepted: false,
+      captcha: '',
+    });
+    setCaptchaAnswer('');
   };
 
   return (
-    <section id="iletisim" className="py-20 px-4 bg-white dark:bg-black">
-      <div className="container mx-auto max-w-2xl">
-        <h2 className="text-4xl font-light text-black dark:text-white mb-12 text-center uppercase tracking-wider">
-          İletişim
+    <section id="contact" className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          {t('contact.title')}
         </h2>
         
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              Cinsiyet
-            </label>
-            <div className="flex gap-4">
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="salutation"
-                  value="male"
-                  checked={formData.salutation === 'male'}
-                  onChange={handleInputChange}
-                  className="mr-2"
-                />
-                <span className="text-zinc-700 dark:text-zinc-300">Bay</span>
+        <div className="max-w-2xl mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium mb-2">{t('contact.salutation')}</label>
+              <div className="flex gap-4">
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="salutation"
+                    value={t('contact.mr')}
+                    checked={formData.salutation === t('contact.mr')}
+                    onChange={(e) => setFormData({ ...formData, salutation: e.target.value })}
+                    className="mr-2"
+                  />
+                  {t('contact.mr')}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="radio"
+                    name="salutation"
+                    value={t('contact.mrs')}
+                    checked={formData.salutation === t('contact.mrs')}
+                    onChange={(e) => setFormData({ ...formData, salutation: e.target.value })}
+                    className="mr-2"
+                  />
+                  {t('contact.mrs')}
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                {t('contact.interest')}
               </label>
-              <label className="flex items-center">
+              <select
+                value={formData.interest}
+                onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                <option value={t('contact.interest1')}>{t('contact.interest1')}</option>
+                <option value={t('contact.interest2')}>{t('contact.interest2')}</option>
+                <option value={t('contact.interest3')}>{t('contact.interest3')}</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">{t('contact.name')}</label>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">{t('contact.email')}</label>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">{t('contact.message')}</label>
+              <textarea
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={5}
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                {captchaQuestion}
+              </label>
+              <input
+                type="text"
+                value={captchaAnswer}
+                onChange={(e) => setCaptchaAnswer(e.target.value)}
+                required
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            <div>
+              <label className="flex items-start">
                 <input
-                  type="radio"
-                  name="salutation"
-                  value="female"
-                  checked={formData.salutation === 'female'}
-                  onChange={handleInputChange}
-                  className="mr-2"
+                  type="checkbox"
+                  checked={formData.privacyAccepted}
+                  onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
+                  className="mt-1 mr-2"
+                  required
                 />
-                <span className="text-zinc-700 dark:text-zinc-300">Bayan</span>
+                <span className="text-sm">
+                  {t('contact.privacy')}
+                </span>
               </label>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              İlgi Alanım
-            </label>
-            <select
-              name="interest"
-              value={formData.interest}
-              onChange={handleInputChange}
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
-              required
-            >
-              <option value="">Seçiniz</option>
-              <option value="projects">Projeler</option>
-              <option value="architecture">Mimarlık</option>
-              <option value="interior">İç Mimarlık</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              Ad Soyad *
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              E-posta *
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              Mesaj
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              rows={5}
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm text-zinc-700 dark:text-zinc-300 mb-2">
-              Güvenlik Sorusu: Türkiye'nin başkenti neresidir? *
-            </label>
-            <input
-              type="text"
-              name="captcha"
-              value={formData.captcha}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
-            />
-          </div>
-
-          <div>
-            <label className="flex items-start">
-              <input
-                type="checkbox"
-                name="privacy"
-                checked={formData.privacy}
-                onChange={handleInputChange}
-                required
-                className="mt-1 mr-2"
-              />
-              <span className="text-sm text-zinc-700 dark:text-zinc-300">
-                Gizlilik politikasına göre verilerimin elektronik işlenmesine onay veriyorum. *
-              </span>
-            </label>
-          </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors text-lg font-medium disabled:opacity-50"
-          >
-            {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
-          </button>
-        </form>
-
-        <div className="mt-12 text-center space-y-2">
-          <p className="text-lg font-medium text-black dark:text-white">
-            Bilgin İnşaat Mühendisliği
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Örnek Adres, Örnek Şehir
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Tel: +90 XXX XXX XX XX
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400">
-            E-posta: info@example.com
-          </p>
+            <Button type="submit" className="w-full">
+              {t('contact.submit')}
+            </Button>
+          </form>
         </div>
       </div>
     </section>
   );
 }
-
