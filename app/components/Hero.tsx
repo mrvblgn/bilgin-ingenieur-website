@@ -56,13 +56,13 @@ export default function Hero() {
       </div>
 
       {/* Text Content Section - Alt Bölüm */}
-      <div className="bg-[#E8E3D8] py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <div className="bg-white py-20 md:py-32">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-800 uppercase tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-black font-amoret uppercase tracking-tight">
               {t('hero.title')}
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed normal-case" style={{ textTransform: 'none', fontVariant: 'normal' }}>
               {t('hero.subtitle')}
             </p>
             <Button
@@ -70,7 +70,7 @@ export default function Hero() {
                 const element = document.querySelector('#real-estate');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-gray-800 text-white hover:bg-gray-700"
+              className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-sm md:text-base font-medium tracking-wide uppercase font-amoret transition-colors"
             >
               {t('hero.cta')}
             </Button>

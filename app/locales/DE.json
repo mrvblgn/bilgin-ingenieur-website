@@ -3,7 +3,6 @@
     "home": "HOME",
     "services": "LEISTUNGEN",
     "projects": "REFERENZEN",
-    "realEstate": "IMMOBILIEN",
     "about": "ÜBER UNS",
     "contact": "KONTAKT"
   },
@@ -14,15 +13,27 @@
   },
   "about": {
     "title": "Über uns",
+    "pageIntro1": "Unser vielseitiges Kollektiv von Fachleuten bildet die Basis unseres Schaffensprozesses und verbindet exzellentes Handwerk mit kreativer Gestaltung.",
+    "pageIntro2": "Durch unser gemeinsames Engagement und die vielfältigen Ideen, die daraus entstehen, entwickeln wir maßgeschneiderte Architektur- und Ingenieurlösungen. Mit einem feinen Gespür für Atmosphäre, Ästhetik und Haptik schaffen wir hochwertige sowie funktionale Konzepte. Der gezielte Einsatz natürlicher Materialien und der respektvolle Umgang mit bewährten Baukulturen lassen unsere Entwürfe mit großer Detailverliebtheit entstehen.",
+    "generalplanerTitle": "DIE GENERALPLANER",
+    "generalplanerText": "Unsere Expertise basiert auf langjähriger Erfahrung in der Architektur- und Baubranche. Dieser Erfahrungsschatz wird durch unseren unermüdlichen Antrieb ergänzt: die spezifischen Anforderungen unserer Kunden in innovative Lösungen zu verwandeln. Dieses Narrativ manifestiert sich sowohl in der individuellen Geometrie unserer Entwürfe als auch in unserem unverkennbaren Stil.",
+    "generalplanerText2": "Bei Bilgin Ingenieurbüro und Deca Architektur steht die perfekte Balance zwischen Ästhetik und Funktionalität im Vordergrund. Jedes Projekt ist ein Zeugnis unserer Leidenschaft für Architektur und Ingenieurwesen und unserer Verpflichtung zu höchster Qualität.",
+    "intro1": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – Ihre zuverlässigen Partner für innovative und maßgeschneiderte Architektur- und Ingenieurlösungen mit Sitz in Heilbronn und Projekten in ganz Deutschland.",
+    "intro2": "Wir bieten Ihnen umfassende und erstklassige Leistungen in den Bereichen Bauantrag, Werkplanung und Ausführung. Entdecken Sie unsere Kompetenz und lassen Sie sich von unseren Projekten inspirieren.",
+    "intro3": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – zwei Unternehmen, die sich in Heilbronn etabliert haben und erstklassige Architektur- und Ingenieurdienstleistungen anbieten. Mit einem gemeinsamen Fokus auf modernes Design und technische Exzellenz haben wir zahlreiche erfolgreiche Projekte realisiert.",
+    "intro4": "Unsere Architektur- und Ingenieurdienstleistungen für Ihre Bauprojekte in Heilbronn und Umgebung.",
+    "intro5": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – wir bieten Ihnen erstklassige Architektur- und Ingenieurdienstleistungen in Heilbronn. Unsere erfahrenen Teams begleiten Sie von der ersten Idee bis zur erfolgreichen Umsetzung Ihres Bauprojekts. Entdecken Sie unser vielfältiges Leistungsspektrum und profitieren Sie von unserer Expertise.",
+    "teamTitle": "Unser Team",
+    "teamSubtitle": "Lernen Sie unsere Architekten und Ingenieure kennen.",
     "member1": {
-      "quote": "wir gestalten zuhause für generationen",
-      "description": "Unsere Leidenschaft liegt in der Realisierung hochwertiger Wohnbauten. Als Generalplaner bieten wir Ihnen eine kompromisslose und umfassende Betreuung, um Ihre Traumimmobilie zu verwirklichen. Wir begleiten Sie von der ersten Idee bis zur bezugsfertigen Immobilie und decken dabei den gesamten Planungsprozess ab.",
-      "role": "Geschäftsführer"
+      "name": "Bilal Bilgin",
+      "title": "Bauingenieur",
+      "description": "Über 15 Jahre Erfahrung in modernem Design."
     },
     "member2": {
-      "quote": "Mit unseren Kitzbüheler Wurzeln Stehen wir für Tradition, gepaart mit modernsten Techniken.",
-      "description": "Für uns steht die perfekte Balance zwischen Ästhetik und Funktionalität im Vordergrund. Jedes Projekt ist ein Zeugnis unserer Leidenschaft für Architektur und unserer Verpflichtung zu höchster Qualität. Lassen Sie uns gemeinsam Ihre Vision verwirklichen und außergewöhnliche Lebensräume schaffen.",
-      "role": "Geschäftsführer"
+      "name": "Derman Catak",
+      "title": "Bauingenieurin",
+      "description": "Spezialisiert auf nachhaltige Ingenieurlösungen."
     }
   },
   "services": {
@@ -51,27 +62,20 @@
   },
   "contact": {
     "title": "KONTAKT",
-    "salutation": "Anrede",
-    "mr": "Herr",
-    "mrs": "Frau",
-    "interest": "Ich interessiere mich für",
-    "interest1": "Immobilien",
-    "interest2": "Architektur",
-    "interest3": "Innenarchitektur",
-    "name": "Name",
-    "email": "E-Mail",
-    "message": "Nachricht",
-    "captcha": "Wie lautet die Hauptstadt von Österreich?",
-    "privacy": "Ich stimme der elektronischen Verarbeitung meiner Daten zum Zwecke der Bearbeitung meiner Anfrage gemäß der Datenschutzerklärung zu.*",
-    "submit": "ABSENDEN",
-    "privacyError": "Bitte akzeptieren Sie die Datenschutzerklärung.",
-    "captchaError": "Bitte beantworten Sie die Sicherheitsfrage korrekt.",
-    "success": "Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden."
+    "infoTitle": "KONTAKTINFORMATIONEN",
+    "locationTitle": "UNSERE ADRESSE",
+    "addressTitle": "ADRESSE",
+    "address": "Heilbronn, Deutschland",
+    "phoneTitle": "TELEFON",
+    "phone": "+49 7131 123456",
+    "emailTitle": "E-MAIL",
+    "email": "projekte@deca-online.de",
+    "viewOnMaps": "Auf Google Maps anzeigen"
   },
   "footer": {
     "references": "REFERENZEN",
-    "realEstate": "IMMOBILIEN",
     "services": "LEISTUNGEN",
+    "about": "ÜBER UNS",
     "contact": "KONTAKT"
   }
 }

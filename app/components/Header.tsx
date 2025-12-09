@@ -2,24 +2,77 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { NavigationItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [padding, setPadding] = useState({ left: 24, right: 24, top: 12, bottom: 12 });
 
+  const getLocalizedHref = (key: string): string => {
+    if (language === 'DE') {
+      const deRoutes: { [key: string]: string } = {
+        home: '/',
+        services: '/leistungen',
+        projects: '/referenzen',
+        about: '/uber-uns',
+        contact: '/kontakt',
+      };
+      return deRoutes[key] || '/';
+    } else {
+      const trRoutes: { [key: string]: string } = {
+        home: '/',
+        services: '/hizmetler',
+        projects: '/referanslar',
+        about: '/hakkimizda',
+        contact: '/iletisim',
+      };
+      return trRoutes[key] || '/';
+    }
+  };
+
+  const getCurrentPageKey = (path: string): string => {
+    const deToKey: { [key: string]: string } = {
+      '/': 'home',
+      '/leistungen': 'services',
+      '/referenzen': 'projects',
+      '/uber-uns': 'about',
+      '/kontakt': 'contact',
+    };
+    const trToKey: { [key: string]: string } = {
+      '/': 'home',
+      '/hizmetler': 'services',
+      '/referanslar': 'projects',
+      '/hakkimizda': 'about',
+      '/iletisim': 'contact',
+    };
+    return deToKey[path] || trToKey[path] || 'home';
+  };
+
+  // Handle language change and redirect to corresponding page
+  const handleLanguageChange = (newLanguage: 'TR' | 'DE') => {
+    if (newLanguage === language) return;
+    
+    const currentPageKey = getCurrentPageKey(pathname);
+    const newHref = newLanguage === 'DE' 
+      ? getLocalizedHref(currentPageKey)
+      : getLocalizedHref(currentPageKey);
+    
+    setLanguage(newLanguage);
+    router.push(newHref);
+  };
+
   const navigationItems: NavigationItem[] = [
-    { label: t('nav.home'), href: '/' },
-    { label: t('nav.services'), href: '/leistungen' },
-    { label: t('nav.projects'), href: '/referenzen' },
-    { label: t('nav.realEstate'), href: '/immobilien' },
-    { label: t('nav.about'), href: '/uber-uns' },
-    { label: t('nav.contact'), href: '/kontakt' },
+    { label: t('nav.home'), href: getLocalizedHref('home') },
+    { label: t('nav.services'), href: getLocalizedHref('services') },
+    { label: t('nav.projects'), href: getLocalizedHref('projects') },
+    { label: t('nav.about'), href: getLocalizedHref('about') },
+    { label: t('nav.contact'), href: getLocalizedHref('contact') },
   ];
 
   const handleNavClick = () => {
@@ -44,11 +97,22 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    // Check if current page is about or contact page
+    const isAboutPage = pathname === '/uber-uns' || pathname === '/hakkimizda';
+    const isContactPage = pathname === '/kontakt' || pathname === '/iletisim';
+    if (isAboutPage || isContactPage) {
+      setIsScrolled(true); // Always show scrolled state on about and contact pages
+    } else {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    }
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      if (!isAboutPage && !isContactPage) {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [pathname]);
 
   // Handle responsive padding
   useEffect(() => {
@@ -116,7 +180,7 @@ export default function Header() {
               {!isMenuOpen && (
                 <div className="flex items-center gap-1.5">
                   <button
-                    onClick={() => setLanguage('TR')}
+                    onClick={() => handleLanguageChange('TR')}
                     className={`text-base md:text-lg font-normal transition-opacity ${
                       language === 'TR'
                         ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'
@@ -127,7 +191,7 @@ export default function Header() {
                   </button>
                   <span className={`text-xl md:text-2xl ${isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'}`}>|</span>
                   <button
-                    onClick={() => setLanguage('DE')}
+                    onClick={() => handleLanguageChange('DE')}
                     className={`text-base md:text-lg font-normal transition-opacity ${
                       language === 'DE'
                         ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'

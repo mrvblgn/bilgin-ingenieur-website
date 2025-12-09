@@ -3,7 +3,6 @@
     "home": "ANA SAYFA",
     "services": "HİZMETLER",
     "projects": "REFERANSLAR",
-    "realEstate": "GAYRİMENKUL",
     "about": "HAKKIMIZDA",
     "contact": "İLETİŞİM"
   },
@@ -14,15 +13,27 @@
   },
   "about": {
     "title": "Hakkımızda",
+    "pageIntro1": "Uzmanlarımızdan oluşan çeşitli kolektifimiz, yaratıcı sürecimizin temelini oluşturur ve mükemmel zanaatkarlığı yaratıcı tasarımla birleştirir.",
+    "pageIntro2": "Ortak taahhüdümüz ve bundan doğan çeşitli fikirler sayesinde, özel mimari ve mühendislik çözümleri geliştiriyoruz. Atmosfer, estetik ve dokunsallık konusunda ince bir anlayışla, yüksek kaliteli ve işlevsel konseptler yaratıyoruz. Doğal malzemelerin hedefli kullanımı ve kanıtlanmış inşaat kültürlerine saygılı yaklaşımımız, tasarımlarımızın büyük bir detay sevgisiyle ortaya çıkmasını sağlar.",
+    "generalplanerTitle": "GENEL PLANLAYICILAR",
+    "generalplanerText": "Uzmanlığımız, mimarlık ve inşaat sektöründeki uzun yıllara dayanan deneyime dayanmaktadır. Bu deneyim hazinesi, müşterilerimizin spesifik gereksinimlerini yenilikçi çözümlere dönüştürme konusundaki yorulmak bilmeyen motivasyonumuzla desteklenmektedir. Bu anlatı, hem tasarımlarımızın bireysel geometrisinde hem de ayırt edici stilimizde kendini gösterir.",
+    "generalplanerText2": "Bilgin Ingenieurbüro ve Deca Architektur'da estetik ve işlevsellik arasındaki mükemmel denge ön plandadır. Her proje, mimarlık ve mühendisliğe olan tutkumuzun ve en yüksek kaliteye olan bağlılığımızın bir kanıtıdır.",
+    "intro1": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn merkezli ve tüm Almanya'da projeleri bulunan, yenilikçi ve özel mimari ve mühendislik çözümleri için güvenilir ortaklarınız.",
+    "intro2": "Bauantrag, Werkplanung ve Ausführung alanlarında kapsamlı ve birinci sınıf hizmetler sunuyoruz. Yetkinliğimizi keşfedin ve projelerimizden ilham alın.",
+    "intro3": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da yerleşmiş ve birinci sınıf mimari ve mühendislik hizmetleri sunan iki şirket. Modern tasarım ve teknik mükemmelliğe ortak bir odaklanmayla, sayısız başarılı proje gerçekleştirdik.",
+    "intro4": "Heilbronn ve çevresindeki inşaat projeleriniz için mimari ve mühendislik hizmetlerimiz.",
+    "intro5": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da birinci sınıf mimari ve mühendislik hizmetleri sunuyoruz. Deneyimli ekiplerimiz, inşaat projenizin ilk fikrinden başarılı uygulamasına kadar size eşlik eder. Çeşitli hizmet yelpazemizi keşfedin ve uzmanlığımızdan yararlanın.",
+    "teamTitle": "Ekibimiz",
+    "teamSubtitle": "Mimarlarımızı ve mühendislerimizi tanıyın.",
     "member1": {
-      "quote": "nesiller için ev tasarlıyoruz",
-      "description": "Tutkumuz, yüksek kaliteli konut projelerinin gerçekleştirilmesinde yatmaktadır. Genel planlayıcı olarak, hayalinizdeki gayrimenkulü gerçekleştirmek için size kapsamlı ve ödünsüz bir hizmet sunuyoruz. İlk fikirden teslimata hazır gayrimenkulünüze kadar sizi yönlendiriyor ve tüm planlama sürecini kapsıyoruz.",
-      "role": "Genel Müdür"
+      "name": "Bilal Bilgin",
+      "title": "İnşaat Mühendisi",
+      "description": "Modern tasarımda 15 yıldan fazla deneyim."
     },
     "member2": {
-      "quote": "Kitzbühel köklerimizle geleneği, en modern tekniklerle birleştiriyoruz.",
-      "description": "Bizim için estetik ve işlevsellik arasındaki mükemmel denge ön plandadır. Her proje, mimariye olan tutkumuzun ve en yüksek kaliteye olan bağlılığımızın bir kanıtıdır. Birlikte vizyonunuzu gerçekleştirelim ve olağanüstü yaşam alanları yaratalım.",
-      "role": "Genel Müdür"
+      "name": "Derman Catak",
+      "title": "İnşaat Mühendisi",
+      "description": "Sürdürülebilir mühendislik çözümlerinde uzman."
     }
   },
   "services": {
@@ -51,27 +62,20 @@
   },
   "contact": {
     "title": "İLETİŞİM",
-    "salutation": "Hitap",
-    "mr": "Bay",
-    "mrs": "Bayan",
-    "interest": "İlgilendiğim alan",
-    "interest1": "Gayrimenkul",
-    "interest2": "Mimari",
-    "interest3": "İç Mimari",
-    "name": "Ad",
-    "email": "E-posta",
-    "message": "Mesaj",
-    "captcha": "Avusturya'nın başkenti nedir?",
-    "privacy": "İsteğimin işlenmesi amacıyla verilerimin elektronik olarak işlenmesine, gizlilik politikasına uygun olarak izin veriyorum.*",
-    "submit": "GÖNDER",
-    "privacyError": "Lütfen gizlilik politikasını kabul edin.",
-    "captchaError": "Lütfen güvenlik sorusunu doğru yanıtlayın.",
-    "success": "Mesajınız için teşekkür ederiz! En kısa sürede size dönüş yapacağız."
+    "infoTitle": "İLETİŞİM BİLGİLERİ",
+    "locationTitle": "ADRESİMİZ",
+    "addressTitle": "ADRES",
+    "address": "Heilbronn, Almanya",
+    "phoneTitle": "TELEFON",
+    "phone": "+49 7131 123456",
+    "emailTitle": "E-POSTA",
+    "email": "projekte@deca-online.de",
+    "viewOnMaps": "Google Maps'te görüntüle"
   },
   "footer": {
     "references": "REFERANSLAR",
-    "realEstate": "GAYRİMENKUL",
     "services": "HİZMETLER",
+    "about": "HAKKIMIZDA",
     "contact": "İLETİŞİM"
   }
 }

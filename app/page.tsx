@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ProjectsSection from './components/ProjectsSection';
-import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
 /**
@@ -17,7 +16,6 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
-      <ContactForm />
       <Footer />
     </main>
   );

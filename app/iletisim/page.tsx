@@ -1,12 +1,12 @@
 import Header from '../components/Header';
-import AboutContactSection from '../components/AboutContactSection';
+import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
-export default function UberUnsPage() {
+export default function IletisimPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <AboutContactSection />
+      <ContactSection />
       <Footer />
     </main>
   );

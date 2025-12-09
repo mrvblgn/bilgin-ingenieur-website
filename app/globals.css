@@ -25,10 +25,35 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Amoret font for headings only */
+.font-amoret {
+  font-family: "The Amoret Collection Sans", Helvetica, Arial, Lucida, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Ensure paragraphs and body text are normal case */
+p {
+  text-transform: none !important;
+  font-variant: normal !important;
+}
+
+body {
+  text-transform: none !important;
+}
+
+/* Normal case for all text elements except headings with font-amoret */
+span:not(.font-amoret),
+div:not(.font-amoret),
+a:not(.font-amoret),
+li:not(.font-amoret) {
+  text-transform: none !important;
 }
 
 a {

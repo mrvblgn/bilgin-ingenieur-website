@@ -1,12 +1,12 @@
 import Header from '../components/Header';
-import AboutContactSection from '../components/AboutContactSection';
+import ServicesSection from '../components/ServicesSection';
 import Footer from '../components/Footer';
 
-export default function UberUnsPage() {
+export default function HizmetlerPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <AboutContactSection />
+      <ServicesSection />
       <Footer />
     </main>
   );
