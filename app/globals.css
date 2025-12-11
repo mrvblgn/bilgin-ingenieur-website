@@ -70,3 +70,80 @@ button {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* General header styling - padding and centering */
+section .max-w-4xl h1,
+section .max-w-4xl h2,
+section .max-w-6xl h1,
+section .max-w-6xl h2 {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Real estate section padding */
+#real-estate {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #real-estate {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #real-estate {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Projects section h3 headings padding */
+#projects h3,
+#real-estate h3 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+
+/* Projects section margin bottom */
+#projects {
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #projects {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #projects {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* Project Images Gallery bottom padding */
+#project-images-gallery {
+  padding-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  #project-images-gallery {
+    padding-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #project-images-gallery {
+    padding-bottom: 3rem !important;
+  }
+}

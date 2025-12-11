@@ -19,6 +19,7 @@ export interface Project {
   title: string;
   description: string;
   imageUrl?: string;
+  images?: string[];
   status: 'completed' | 'planning';
   location?: string;
 }

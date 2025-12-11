@@ -31,23 +31,23 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white py-20 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-10">
         {/* Top Section - Navigation Links and Social Media */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pb-10">
+        <div className="flex items-center justify-between pb-10 pt-16 mt-8 mb-8 min-h-[60px]">
           {/* Navigation Links - Centered */}
-          <div className="flex flex-wrap items-center justify-center gap-12 mb-10">
+          <div className="flex-1 flex items-center justify-center gap-12">
             <Link href={getLocalizedHref('projects')} className="hover:opacity-80 transition-opacity uppercase tracking-wide">
               {t('footer.references')}
             </Link>
-            <span className="text-white font-light mx-4" style={{ fontSize: '44px', display: 'inline-block', height: '60px', lineHeight: '60px', verticalAlign: 'middle' }}>|</span>
+            <span className="text-white mx-4 w-px bg-white h-[2.5em]"></span>
             <Link href={getLocalizedHref('services')} className="hover:opacity-80 transition-opacity uppercase tracking-wide">
               {t('footer.services')}
             </Link>
-            <span className="text-white font-light mx-4" style={{ fontSize: '44px', display: 'inline-block', height: '60px', lineHeight: '60px', verticalAlign: 'middle' }}>|</span>
+            <span className="text-white mx-4 w-px bg-white h-[2.5em]"></span>
             <Link href={getLocalizedHref('about')} className="hover:opacity-80 transition-opacity uppercase tracking-wide">
               {t('footer.about')}
             </Link>
-            <span className="text-white font-light mx-4" style={{ fontSize: '44px', display: 'inline-block', height: '60px', lineHeight: '60px', verticalAlign: 'middle' }}>|</span>
+            <span className="text-white mx-4 w-px bg-white h-[2.5em]"></span>
             <Link href={getLocalizedHref('contact')} className="hover:opacity-80 transition-opacity uppercase tracking-wide">
               {t('footer.contact')}
             </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
             <a href="#" className="hover:opacity-80 transition-opacity uppercase tracking-wide text-sm">
               IMPRESSUM
             </a>
-            <span className="text-white font-light" style={{ fontSize: '16px', lineHeight: '1' }}>|</span>
+            <span className="text-white font-light" style={{ fontSize: '16px', display: 'inline-block', height: '24px', lineHeight: '24px' }}>|</span>
             <a href="#" className="hover:opacity-80 transition-opacity uppercase tracking-wide text-sm">
               DATENSCHUTZ
             </a>

@@ -97,18 +97,19 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Check if current page is about or contact page
+    // Check if current page is about, contact, or project detail page
     const isAboutPage = pathname === '/uber-uns' || pathname === '/hakkimizda';
     const isContactPage = pathname === '/kontakt' || pathname === '/iletisim';
-    if (isAboutPage || isContactPage) {
-      setIsScrolled(true); // Always show scrolled state on about and contact pages
+    const isProjectDetailPage = typeof pathname === 'string' && pathname.startsWith('/projekt/');
+    if (isAboutPage || isContactPage || isProjectDetailPage) {
+      setIsScrolled(true); // Always show scrolled state on about, contact, and project detail pages
     } else {
       window.addEventListener('scroll', handleScroll);
       handleScroll();
     }
 
     return () => {
-      if (!isAboutPage && !isContactPage) {
+      if (!isAboutPage && !isContactPage && !isProjectDetailPage) {
         window.removeEventListener('scroll', handleScroll);
       }
     };

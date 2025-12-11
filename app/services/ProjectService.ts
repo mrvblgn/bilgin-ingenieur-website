@@ -6,6 +6,7 @@ import { Project } from '../types';
 export interface IProjectRepository {
   getAll(): Project[];
   getByStatus(status: 'completed' | 'planning'): Project[];
+  getById(id: string): Project | undefined;
   getPaginated(page: number, pageSize: number, status?: 'completed' | 'planning'): {
     projects: Project[];
     totalPages: number;
@@ -26,5 +27,9 @@ export class ProjectService {
       return this.repository.getByStatus(status);
     }
     return this.repository.getAll();
+  }
+
+  getProjectById(id: string): Project | undefined {
+    return this.repository.getById(id);
   }
 }
