@@ -91,28 +91,9 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
-  // Handle scroll to change header appearance
+  // Always show white header on all pages
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    // Check if current page is about, contact, or project detail page
-    const isAboutPage = pathname === '/uber-uns' || pathname === '/hakkimizda';
-    const isContactPage = pathname === '/kontakt' || pathname === '/iletisim';
-    const isProjectDetailPage = typeof pathname === 'string' && pathname.startsWith('/projekt/');
-    if (isAboutPage || isContactPage || isProjectDetailPage) {
-      setIsScrolled(true); // Always show scrolled state on about, contact, and project detail pages
-    } else {
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
-    }
-
-    return () => {
-      if (!isAboutPage && !isContactPage && !isProjectDetailPage) {
-        window.removeEventListener('scroll', handleScroll);
-      }
-    };
+    setIsScrolled(true);
   }, [pathname]);
 
   // Handle responsive padding
@@ -120,11 +101,11 @@ export default function Header() {
     const updatePadding = () => {
       const width = window.innerWidth;
       if (width >= 1024) {
-        setPadding({ left: 72, right: 72, top: 12, bottom: 12 });
+        setPadding({ left: 72, right: 72, top: 0, bottom: 0 });
       } else if (width >= 768) {
-        setPadding({ left: 44, right: 44, top: 12, bottom: 12 });
+        setPadding({ left: 44, right: 44, top: 0, bottom: 0 });
       } else {
-        setPadding({ left: 24, right: 24, top: 12, bottom: 12 });
+        setPadding({ left: 24, right: 24, top: 0, bottom: 0 });
       }
     };
 
@@ -136,9 +117,7 @@ export default function Header() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
-          isScrolled ? 'bg-white/80 shadow-md' : 'bg-transparent'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full bg-white/80 backdrop-blur-sm shadow-md"
         style={{ margin: 0, padding: 0 }}
       >
         <nav className="p-0 w-full">
@@ -153,25 +132,25 @@ export default function Header() {
               boxSizing: 'border-box'
             }}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex items-center">
               <Link 
                 href="/"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity header-logo-container"
               >
                 <img 
                   src="/assets/Bilgin_Ingenieurbüro_Logo_page-0001.png" 
                   alt="Bilgin Ingenieurbüro Logo" 
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="header-logo-img"
                 />
               </Link>
               <Link 
                 href="/"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity header-logo-container"
               >
                 <img 
                   src="/assets/deca_architektur_logo_page-0001.png" 
                   alt="Deca Architektur Logo" 
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="header-logo-img"
                 />
               </Link>
             </div>
@@ -182,22 +161,18 @@ export default function Header() {
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => handleLanguageChange('TR')}
-                    className={`text-base md:text-lg font-normal transition-opacity ${
-                      language === 'TR'
-                        ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'
-                        : isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'
-                    } hover:opacity-100`}
+                    className={`text-base md:text-lg font-normal transition-opacity hover:opacity-100 ${
+                      language === 'TR' ? 'text-black opacity-100' : 'text-gray-500 opacity-70'
+                    }`}
                   >
                     TR
                   </button>
-                  <span className={`text-xl md:text-2xl ${isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'}`}>|</span>
+                  <span className="text-xl md:text-2xl text-gray-400">|</span>
                   <button
                     onClick={() => handleLanguageChange('DE')}
-                    className={`text-base md:text-lg font-normal transition-opacity ${
-                      language === 'DE'
-                        ? isScrolled ? 'text-black opacity-100' : 'text-white opacity-100'
-                        : isScrolled ? 'text-gray-600 opacity-70' : 'text-white opacity-70'
-                    } hover:opacity-100`}
+                    className={`text-base md:text-lg font-normal transition-opacity hover:opacity-100 ${
+                      language === 'DE' ? 'text-black opacity-100' : 'text-gray-500 opacity-70'
+                    }`}
                   >
                     DE
                   </button>
@@ -207,9 +182,7 @@ export default function Header() {
               {/* Hamburger Menu Button - Hidden when menu is open */}
               {!isMenuOpen && (
                 <button
-                  className={`z-50 relative transition-opacity hover:opacity-80 ${
-                    isScrolled ? 'text-black' : 'text-white'
-                  }`}
+                  className="z-50 relative transition-opacity hover:opacity-80 text-black"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   aria-label="Toggle menu"
                 >

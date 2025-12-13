@@ -14,51 +14,105 @@
   "about": {
     "title": "Hakkımızda",
     "pageIntro1": "Uzmanlarımızdan oluşan çeşitli kolektifimiz, yaratıcı sürecimizin temelini oluşturur ve mükemmel zanaatkarlığı yaratıcı tasarımla birleştirir.",
+    "pageHighlight": "Kalıcı mekânlar tasarlıyoruz.",
     "pageIntro2": "Ortak taahhüdümüz ve bundan doğan çeşitli fikirler sayesinde, özel mimari ve mühendislik çözümleri geliştiriyoruz. Atmosfer, estetik ve dokunsallık konusunda ince bir anlayışla, yüksek kaliteli ve işlevsel konseptler yaratıyoruz. Doğal malzemelerin hedefli kullanımı ve kanıtlanmış inşaat kültürlerine saygılı yaklaşımımız, tasarımlarımızın büyük bir detay sevgisiyle ortaya çıkmasını sağlar.",
-    "generalplanerTitle": "GENEL PLANLAYICILAR",
-    "generalplanerText": "Uzmanlığımız, mimarlık ve inşaat sektöründeki uzun yıllara dayanan deneyime dayanmaktadır. Bu deneyim hazinesi, müşterilerimizin spesifik gereksinimlerini yenilikçi çözümlere dönüştürme konusundaki yorulmak bilmeyen motivasyonumuzla desteklenmektedir. Bu anlatı, hem tasarımlarımızın bireysel geometrisinde hem de ayırt edici stilimizde kendini gösterir.",
-    "generalplanerText2": "Bilgin Ingenieurbüro ve Deca Architektur'da estetik ve işlevsellik arasındaki mükemmel denge ön plandadır. Her proje, mimarlık ve mühendisliğe olan tutkumuzun ve en yüksek kaliteye olan bağlılığımızın bir kanıtıdır.",
+    "generalplanerTitle1": "Deneyim ve Yetkinlik",
+    "generalplanerTitle2": "Estetik ve İşlevsellik",
+    "generalplanerText": "Mimarlık ve inşaat alanındaki uzun yıllara dayanan deneyimimiz, karmaşık gereksinimleri net ve uygulanabilir çözümlere dönüştürmemizi sağlar. Bu yetkinlik, her projede güvenilir ve kalıcı sonuçlar üretmemizin temelidir.",
+    "generalplanerText2": "Her projede, estetik değerleri işlevsellik ile birleştirerek zamansız mekânlar tasarlıyoruz. Kaliteye olan bağlılığımız ve detaylara verdiğimiz önem, çalışmalarımızın ayırt edici unsurudur.",
     "intro1": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn merkezli ve tüm Almanya'da projeleri bulunan, yenilikçi ve özel mimari ve mühendislik çözümleri için güvenilir ortaklarınız.",
     "intro2": "Bauantrag, Werkplanung ve Ausführung alanlarında kapsamlı ve birinci sınıf hizmetler sunuyoruz. Yetkinliğimizi keşfedin ve projelerimizden ilham alın.",
     "intro3": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da yerleşmiş ve birinci sınıf mimari ve mühendislik hizmetleri sunan iki şirket. Modern tasarım ve teknik mükemmelliğe ortak bir odaklanmayla, sayısız başarılı proje gerçekleştirdik.",
     "intro4": "Heilbronn ve çevresindeki inşaat projeleriniz için mimari ve mühendislik hizmetlerimiz.",
     "intro5": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da birinci sınıf mimari ve mühendislik hizmetleri sunuyoruz. Deneyimli ekiplerimiz, inşaat projenizin ilk fikrinden başarılı uygulamasına kadar size eşlik eder. Çeşitli hizmet yelpazemizi keşfedin ve uzmanlığımızdan yararlanın.",
     "teamTitle": "Ekibimiz",
-    "teamSubtitle": "Mimarlarımızı ve mühendislerimizi tanıyın.",
+    "teamSubtitle": "Mimarlık ve mühendisliği bir araya getiren iki isim.",
     "member1": {
       "name": "Bilal Bilgin",
       "title": "İnşaat Mühendisi",
+      "title2": "Kurucu Ortak",
       "description": "Modern tasarımda 15 yıldan fazla deneyim."
     },
     "member2": {
       "name": "Derman Catak",
-      "title": "İnşaat Mühendisi",
+      "title": "Mimar",
+      "title2": "Kurucu Ortak",
       "description": "Sürdürülebilir mühendislik çözümlerinde uzman."
     }
   },
   "services": {
     "title": "HİZMETLER",
     "service1": {
-      "title": "PROJE GELİŞTİRME",
-      "description": "İlk fikirden gerçekleştirmeye kadar tüm geliştirme sürecinde size eşlik ediyoruz."
+      "title": "Yapı Ruhsatı & Onay",
+      "description": "Yapı ruhsatları ve onaylar için tüm belgeleri hazırlıyor ve koordine ediyoruz:",
+      "items": [
+        "Müstakil ev, Çok aileli konut",
+        "İkiz ev, Sıra ev",
+        "Ek yapılar, Genişletmeler",
+        "Çatı pencereleri, Çatı katı, Kat ilaveleri",
+        "Kullanım değişiklikleri",
+        "Bölüm planları / Bağımsız bölüm belgesi",
+        "Atölye ve ticari binalar"
+      ]
     },
     "service2": {
-      "title": "MİMARİ",
-      "description": "Geleneği ve moderni uyumlu bir şekilde birleştiren yenilikçi mimari."
+      "title": "Planlama & Uygulama Projesi",
+      "description": "Projenizin her aşamasında profesyonel planlama ve detaylı uygulama projeleri sunuyoruz:",
+      "items": [
+        "Tasarım planlaması",
+        "Uygulama ve detay projeleri",
+        "Yeni yapı ve mevcut yapılar için detay planlaması",
+        "Engelsiz ve ruhsata uygun planlama"
+      ]
     },
     "service3": {
-      "title": "İÇ MİMARİ",
-      "description": "Olağanüstü yaşam alanları için özel iç mimari."
-    },
-    "service4": {
-      "title": "PROJE YÖNETİMİ",
-      "description": "Vizyonunuzun ödünsüz uygulanması için profesyonel proje yönetimi."
+      "title": "Uygulama & Danışmanlık",
+      "description": "İnşaat sürecinizde yanınızda olarak uzman danışmanlık hizmeti veriyoruz:",
+      "items": [
+        "İhale ve uygulama desteği",
+        "Uzman planlamacıların koordinasyonu",
+        "İnşaat hukuku, fizibilite ve ekonomik verimlilik danışmanlığı"
+      ]
     }
   },
   "projects": {
     "title": "REFERANSLAR",
+    "subtitle": "Özel projelerimizden ilham alın:",
     "completed": "Tamamlanan Gayrimenkuller",
-    "planning": "PLANLAMA AŞAMASINDAKİ GAYRİMENKULLER"
+    "planning": "PLANLAMA AŞAMASINDAKİ GAYRİMENKULLER",
+    "region": "BÖLGE",
+    "chalet": "CHALET",
+    "projekt": "PROJE",
+    "details": "Detaylar",
+    "noImage": "Proje Görseli",
+    "project1": {
+      "title": "CHALET OLW44",
+      "description": "Üstün kaliteli, lüks temsil eden bir chalet."
+    },
+    "project2": {
+      "title": "ASTBERGHOF",
+      "description": "Çağdaş tasarım ve sürdürülebilir malzemelerle modern konut."
+    },
+    "project3": {
+      "title": "CHALET K23",
+      "description": "Geleneksel mimari ve modern konforla yüksek kaliteli rezidans."
+    },
+    "project4": {
+      "title": "MODERN KONUT",
+      "description": "Sürdürülebilir malzemeler ve yenilikçi çözümlerle çağdaş tasarım."
+    },
+    "project5": {
+      "title": "CHALET PROJE ALPHA",
+      "description": "Nefes kesen Alp manzarası ile planlama aşamasında yeni chalet projesi."
+    },
+    "project6": {
+      "title": "VİLLA PROJE BETA",
+      "description": "Özel göl manzarası ile geliştirme aşamasında lüks villa."
+    },
+    "project7": {
+      "title": "REZİDANS PROJE GAMMA",
+      "description": "Yüksek kaliteli mimari ile planlama aşamasında özel rezidans."
+    }
   },
   "contact": {
     "title": "İLETİŞİM",
@@ -67,7 +121,7 @@
     "addressTitle": "ADRES",
     "address": "Heilbronn, Almanya",
     "phoneTitle": "TELEFON",
-    "phone": "+49 7131 123456",
+    "phone": "+49 176 24433958",
     "emailTitle": "E-POSTA",
     "email": "projekte@deca-online.de",
     "viewOnMaps": "Google Maps'te görüntüle"
@@ -76,6 +130,8 @@
     "references": "REFERANSLAR",
     "services": "HİZMETLER",
     "about": "HAKKIMIZDA",
-    "contact": "İLETİŞİM"
+    "contact": "İLETİŞİM",
+    "impressum": "KÜNYE",
+    "datenschutz": "GİZLİLİK POLİTİKASI"
   }
 }

@@ -14,51 +14,105 @@
   "about": {
     "title": "Über uns",
     "pageIntro1": "Unser vielseitiges Kollektiv von Fachleuten bildet die Basis unseres Schaffensprozesses und verbindet exzellentes Handwerk mit kreativer Gestaltung.",
+    "pageHighlight": "Wir gestalten Räume, die Bestand haben.",
     "pageIntro2": "Durch unser gemeinsames Engagement und die vielfältigen Ideen, die daraus entstehen, entwickeln wir maßgeschneiderte Architektur- und Ingenieurlösungen. Mit einem feinen Gespür für Atmosphäre, Ästhetik und Haptik schaffen wir hochwertige sowie funktionale Konzepte. Der gezielte Einsatz natürlicher Materialien und der respektvolle Umgang mit bewährten Baukulturen lassen unsere Entwürfe mit großer Detailverliebtheit entstehen.",
-    "generalplanerTitle": "DIE GENERALPLANER",
-    "generalplanerText": "Unsere Expertise basiert auf langjähriger Erfahrung in der Architektur- und Baubranche. Dieser Erfahrungsschatz wird durch unseren unermüdlichen Antrieb ergänzt: die spezifischen Anforderungen unserer Kunden in innovative Lösungen zu verwandeln. Dieses Narrativ manifestiert sich sowohl in der individuellen Geometrie unserer Entwürfe als auch in unserem unverkennbaren Stil.",
-    "generalplanerText2": "Bei Bilgin Ingenieurbüro und Deca Architektur steht die perfekte Balance zwischen Ästhetik und Funktionalität im Vordergrund. Jedes Projekt ist ein Zeugnis unserer Leidenschaft für Architektur und Ingenieurwesen und unserer Verpflichtung zu höchster Qualität.",
+    "generalplanerTitle1": "Erfahrung und Kompetenz",
+    "generalplanerTitle2": "Ästhetik und Funktionalität",
+    "generalplanerText": "Unsere langjährige Erfahrung in der Architektur- und Baubranche ermöglicht es uns, komplexe Anforderungen in klare und umsetzbare Lösungen zu überführen. Diese Kompetenz bildet die Grundlage für verlässliche und nachhaltige Ergebnisse in jedem Projekt.",
+    "generalplanerText2": "In jedem Projekt verbinden wir ästhetische Werte mit funktionalen Lösungen und schaffen zeitlose Räume. Unser Anspruch an höchste Qualität und unsere Liebe zum Detail machen unsere Arbeiten unverwechselbar.",
     "intro1": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – Ihre zuverlässigen Partner für innovative und maßgeschneiderte Architektur- und Ingenieurlösungen mit Sitz in Heilbronn und Projekten in ganz Deutschland.",
     "intro2": "Wir bieten Ihnen umfassende und erstklassige Leistungen in den Bereichen Bauantrag, Werkplanung und Ausführung. Entdecken Sie unsere Kompetenz und lassen Sie sich von unseren Projekten inspirieren.",
     "intro3": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – zwei Unternehmen, die sich in Heilbronn etabliert haben und erstklassige Architektur- und Ingenieurdienstleistungen anbieten. Mit einem gemeinsamen Fokus auf modernes Design und technische Exzellenz haben wir zahlreiche erfolgreiche Projekte realisiert.",
     "intro4": "Unsere Architektur- und Ingenieurdienstleistungen für Ihre Bauprojekte in Heilbronn und Umgebung.",
     "intro5": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – wir bieten Ihnen erstklassige Architektur- und Ingenieurdienstleistungen in Heilbronn. Unsere erfahrenen Teams begleiten Sie von der ersten Idee bis zur erfolgreichen Umsetzung Ihres Bauprojekts. Entdecken Sie unser vielfältiges Leistungsspektrum und profitieren Sie von unserer Expertise.",
     "teamTitle": "Unser Team",
-    "teamSubtitle": "Lernen Sie unsere Architekten und Ingenieure kennen.",
+    "teamSubtitle": "Zwei Namen, die Architektur und Ingenieurwesen vereinen.",
     "member1": {
       "name": "Bilal Bilgin",
       "title": "Bauingenieur",
+      "title2": "Gründungspartner",
       "description": "Über 15 Jahre Erfahrung in modernem Design."
     },
     "member2": {
       "name": "Derman Catak",
-      "title": "Bauingenieurin",
+      "title": "Architekt",
+      "title2": "Gründungspartner",
       "description": "Spezialisiert auf nachhaltige Ingenieurlösungen."
     }
   },
   "services": {
     "title": "LEISTUNGEN",
     "service1": {
-      "title": "PROJEKTENTWICKLUNG",
-      "description": "Von der ersten Idee bis zur Realisierung begleiten wir Sie durch den gesamten Entwicklungsprozess."
+      "title": "Bauantrag & Genehmigung",
+      "description": "Wir erstellen und koordinieren sämtliche Unterlagen für Bauanträge und Genehmigungen:",
+      "items": [
+        "Neubau Einfamilienhaus, Mehrfamilienhaus",
+        "Doppelhaushälfte, Reihenhaus",
+        "An- und Umbauten, Erweiterungen",
+        "Gauben, Dachausbau, Aufstockungen",
+        "Nutzungsänderungen",
+        "Aufteilungspläne / Abgeschlossenheitsbescheinigung",
+        "Werkstatt- und Gewerbebauten"
+      ]
     },
     "service2": {
-      "title": "ARCHITEKTUR",
-      "description": "Innovative Architektur, die Tradition und Moderne harmonisch verbindet."
+      "title": "Planung & Werkplanung",
+      "description": "Wir bieten Ihnen professionelle Planung und detaillierte Ausführungspläne für jede Projektphase:",
+      "items": [
+        "Entwurfsplanung",
+        "Werk- und Ausführungsplanung",
+        "Detailplanung für Neubau & Bestand",
+        "Barrierefreie und genehmigungskonforme Planung"
+      ]
     },
     "service3": {
-      "title": "INNENARCHITEKTUR",
-      "description": "Maßgeschneiderte Innenarchitektur für außergewöhnliche Lebensräume."
-    },
-    "service4": {
-      "title": "PROJEKTMANAGEMENT",
-      "description": "Professionelles Projektmanagement für eine kompromisslose Umsetzung Ihrer Vision."
+      "title": "Ausführung & Beratung",
+      "description": "Wir begleiten Sie durch den gesamten Bauprozess mit fachkundiger Beratung:",
+      "items": [
+        "Unterstützung bei Ausschreibung & Ausführung",
+        "Koordination von Fachplanern",
+        "Beratung zu Baurecht, Machbarkeit und Wirtschaftlichkeit"
+      ]
     }
   },
   "projects": {
     "title": "REFERENZEN",
+    "subtitle": "Lassen Sie sich von unseren maßgeschneiderten Projekten inspirieren:",
     "completed": "Realisierte Immobilien",
-    "planning": "IMMOBILIEN IN PLANUNG"
+    "planning": "IMMOBILIEN IN PLANUNG",
+    "region": "REGION",
+    "chalet": "CHALET",
+    "projekt": "PROJEKT",
+    "details": "Details",
+    "noImage": "Projektbild",
+    "project1": {
+      "title": "CHALET OLW44",
+      "description": "Repräsentatives Luxus-Chalet der Superlative."
+    },
+    "project2": {
+      "title": "ASTBERGHOF",
+      "description": "Modernes Wohnhaus mit zeitgemäßem Design und nachhaltigen Materialien."
+    },
+    "project3": {
+      "title": "CHALET K23",
+      "description": "Hochwertige Residenz mit traditioneller Architektur und modernem Komfort."
+    },
+    "project4": {
+      "title": "MODERNES WOHNHAUS",
+      "description": "Zeitgemäßes Design mit nachhaltigen Materialien und innovativen Lösungen."
+    },
+    "project5": {
+      "title": "CHALET PROJEKT ALPHA",
+      "description": "Neues Chalet-Projekt in Planung mit atemberaubendem Alpenblick."
+    },
+    "project6": {
+      "title": "VILLA PROJEKT BETA",
+      "description": "Luxuriöse Villa in Entwicklung mit exklusivem Seeblick."
+    },
+    "project7": {
+      "title": "RESIDENZ PROJEKT GAMMA",
+      "description": "Exklusive Residenz in Planung mit hochwertiger Architektur."
+    }
   },
   "contact": {
     "title": "KONTAKT",
@@ -67,7 +121,7 @@
     "addressTitle": "ADRESSE",
     "address": "Heilbronn, Deutschland",
     "phoneTitle": "TELEFON",
-    "phone": "+49 7131 123456",
+    "phone": "+49 176 24433958",
     "emailTitle": "E-MAIL",
     "email": "projekte@deca-online.de",
     "viewOnMaps": "Auf Google Maps anzeigen"
@@ -76,6 +130,8 @@
     "references": "REFERENZEN",
     "services": "LEISTUNGEN",
     "about": "ÜBER UNS",
-    "contact": "KONTAKT"
+    "contact": "KONTAKT",
+    "impressum": "IMPRESSUM",
+    "datenschutz": "DATENSCHUTZ"
   }
 }
