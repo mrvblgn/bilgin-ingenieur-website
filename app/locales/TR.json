@@ -20,11 +20,8 @@
     "generalplanerTitle2": "Estetik ve İşlevsellik",
     "generalplanerText": "Mimarlık ve inşaat alanındaki uzun yıllara dayanan deneyimimiz, karmaşık gereksinimleri net ve uygulanabilir çözümlere dönüştürmemizi sağlar. Bu yetkinlik, her projede güvenilir ve kalıcı sonuçlar üretmemizin temelidir.",
     "generalplanerText2": "Her projede, estetik değerleri işlevsellik ile birleştirerek zamansız mekânlar tasarlıyoruz. Kaliteye olan bağlılığımız ve detaylara verdiğimiz önem, çalışmalarımızın ayırt edici unsurudur.",
-    "intro1": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn merkezli ve tüm Almanya'da projeleri bulunan, yenilikçi ve özel mimari ve mühendislik çözümleri için güvenilir ortaklarınız.",
-    "intro2": "Bauantrag, Werkplanung ve Ausführung alanlarında kapsamlı ve birinci sınıf hizmetler sunuyoruz. Yetkinliğimizi keşfedin ve projelerimizden ilham alın.",
-    "intro3": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da yerleşmiş ve birinci sınıf mimari ve mühendislik hizmetleri sunan iki şirket. Modern tasarım ve teknik mükemmelliğe ortak bir odaklanmayla, sayısız başarılı proje gerçekleştirdik.",
-    "intro4": "Heilbronn ve çevresindeki inşaat projeleriniz için mimari ve mühendislik hizmetlerimiz.",
-    "intro5": "Bilgin Ingenieurbüro ve Deca Architektur'a hoş geldiniz – Heilbronn'da birinci sınıf mimari ve mühendislik hizmetleri sunuyoruz. Deneyimli ekiplerimiz, inşaat projenizin ilk fikrinden başarılı uygulamasına kadar size eşlik eder. Çeşitli hizmet yelpazemizi keşfedin ve uzmanlığımızdan yararlanın.",
+    "intro1": "Bilgin Ingenieurbüro ve Deca Architektur, Heilbronn merkezli olarak tüm Almanya'da yenilikçi mimari ve mühendislik çözümleri sunan güvenilir ortaklarınızdır.",
+    "intro2": "Yapı Ruhsatı, Uygulama Projesi ve İnşa alanlarında birinci sınıf hizmetlerle, projelerinizi ilk fikirden başarılı uygulamaya kadar deneyimli ekiplerimizle destekliyoruz.",
     "teamTitle": "Ekibimiz",
     "teamSubtitle": "Mimarlık ve mühendisliği bir araya getiren iki isim.",
     "member1": {
@@ -77,7 +74,7 @@
   },
   "projects": {
     "title": "REFERANSLAR",
-    "subtitle": "Özel projelerimizden ilham alın:",
+    "subtitle": "Her proje, bir mekânın hikayesini anlatır.",
     "completed": "Tamamlanan Gayrimenkuller",
     "planning": "PLANLAMA AŞAMASINDAKİ GAYRİMENKULLER",
     "region": "BÖLGE",

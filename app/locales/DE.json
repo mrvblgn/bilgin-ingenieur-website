@@ -20,11 +20,8 @@
     "generalplanerTitle2": "Ästhetik und Funktionalität",
     "generalplanerText": "Unsere langjährige Erfahrung in der Architektur- und Baubranche ermöglicht es uns, komplexe Anforderungen in klare und umsetzbare Lösungen zu überführen. Diese Kompetenz bildet die Grundlage für verlässliche und nachhaltige Ergebnisse in jedem Projekt.",
     "generalplanerText2": "In jedem Projekt verbinden wir ästhetische Werte mit funktionalen Lösungen und schaffen zeitlose Räume. Unser Anspruch an höchste Qualität und unsere Liebe zum Detail machen unsere Arbeiten unverwechselbar.",
-    "intro1": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – Ihre zuverlässigen Partner für innovative und maßgeschneiderte Architektur- und Ingenieurlösungen mit Sitz in Heilbronn und Projekten in ganz Deutschland.",
-    "intro2": "Wir bieten Ihnen umfassende und erstklassige Leistungen in den Bereichen Bauantrag, Werkplanung und Ausführung. Entdecken Sie unsere Kompetenz und lassen Sie sich von unseren Projekten inspirieren.",
-    "intro3": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – zwei Unternehmen, die sich in Heilbronn etabliert haben und erstklassige Architektur- und Ingenieurdienstleistungen anbieten. Mit einem gemeinsamen Fokus auf modernes Design und technische Exzellenz haben wir zahlreiche erfolgreiche Projekte realisiert.",
-    "intro4": "Unsere Architektur- und Ingenieurdienstleistungen für Ihre Bauprojekte in Heilbronn und Umgebung.",
-    "intro5": "Willkommen bei Bilgin Ingenieurbüro und Deca Architektur – wir bieten Ihnen erstklassige Architektur- und Ingenieurdienstleistungen in Heilbronn. Unsere erfahrenen Teams begleiten Sie von der ersten Idee bis zur erfolgreichen Umsetzung Ihres Bauprojekts. Entdecken Sie unser vielfältiges Leistungsspektrum und profitieren Sie von unserer Expertise.",
+    "intro1": "Bilgin Ingenieurbüro und Deca Architektur sind Ihre zuverlässigen Partner für innovative Architektur- und Ingenieurlösungen mit Sitz in Heilbronn und Projekten in ganz Deutschland.",
+    "intro2": "Mit erstklassigen Leistungen in Bauantrag, Werkplanung und Ausführung begleiten unsere erfahrenen Teams Ihre Projekte von der ersten Idee bis zur erfolgreichen Umsetzung.",
     "teamTitle": "Unser Team",
     "teamSubtitle": "Zwei Namen, die Architektur und Ingenieurwesen vereinen.",
     "member1": {
@@ -77,7 +74,7 @@
   },
   "projects": {
     "title": "REFERENZEN",
-    "subtitle": "Lassen Sie sich von unseren maßgeschneiderten Projekten inspirieren:",
+    "subtitle": "Jedes Projekt erzählt die Geschichte eines Raumes.",
     "completed": "Realisierte Immobilien",
     "planning": "IMMOBILIEN IN PLANUNG",
     "region": "REGION",

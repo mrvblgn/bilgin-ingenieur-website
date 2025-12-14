@@ -1,5 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ProjectReelsCarousel from './components/ProjectReelsCarousel';
+import ProjectCarousel from './components/ProjectCarousel';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ProjectsSection from './components/ProjectsSection';
@@ -13,9 +15,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <ProjectCarousel />
       <AboutSection />
       <ServicesSection />
-      <ProjectsSection />
+      <ProjectReelsCarousel />
       <Footer />
     </main>
   );

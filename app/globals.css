@@ -59,18 +59,18 @@
 
 /* Hero Section Styles */
 .hero-section {
-  margin-bottom: 60px;
+  margin-bottom: 20 !important;
 }
 
 @media (min-width: 768px) {
   .hero-section {
-    margin-bottom: 80px;
+    margin-bottom: 40 !important;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-section {
-    margin-bottom: 100px;
+    margin-bottom: 60 !important;
   }
 }
 
@@ -588,4 +588,86 @@ section .max-w-6xl h2 {
 
 .team-member-email:hover {
   text-decoration: underline;
+}
+
+/* Project Slider Styles */
+.project-slider-card {
+  width: calc(50vw - 1rem);
+  min-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .project-slider-card {
+    width: calc(33.333vw - 1.5rem); /* 3 görsel desktop'ta */
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-slider-card {
+    width: calc(25vw - 1.5rem); /* 4 görsel büyük ekranda */
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .project-slider-card {
+    width: calc(20vw - 1.5rem); /* 5 görsel çok büyük ekranda */
+  }
+}
+
+/* Hide scrollbar for slider */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* About Section Styles */
+#about {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+}
+
+@media (min-width: 768px) {
+  #about {
+    padding-top: 96px !important;
+    padding-bottom: 96px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #about {
+    padding-top: 112px !important;
+    padding-bottom: 112px !important;
+  }
+}
+
+#about .container {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+@media (min-width: 768px) {
+  #about .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #about .container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+#about .max-w-prose {
+  max-width: 65ch !important;
 }

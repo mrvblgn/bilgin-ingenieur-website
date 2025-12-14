@@ -52,10 +52,24 @@ export default function ProjectsSection() {
       {/* Projects Section */}
       <section id="projects" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          {/* Subtitle */}
-          <p className="text-base md:text-lg text-gray-600 text-center mb-12 md:mb-16 max-w-3xl mx-auto" style={{ textTransform: 'none', fontVariant: 'normal' }}>
-            {t('projects.subtitle')}
-          </p>
+          {/* Subtitle with decorative divider */}
+          <div className="flex flex-col items-center">
+            {/* Decorative divider above text */}
+            <div className="w-12 md:w-16 h-px bg-[#D1D5DB] mb-6"></div>
+            
+            {/* Subtitle text */}
+            <p 
+              className="text-sm md:text-base text-[#4B5563] text-center max-w-2xl mx-auto font-light leading-relaxed" 
+              style={{ 
+                textTransform: 'none', 
+                fontVariant: 'normal',
+                letterSpacing: '0.3px',
+                fontWeight: 300
+              }}
+            >
+              {t('projects.subtitle')}
+            </p>
+          </div>
           
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
