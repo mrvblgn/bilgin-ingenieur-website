@@ -37,19 +37,19 @@ export default function Footer() {
           
           {/* Left Column - Logos & Description */}
           <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center">
               <Link href="/" className="hover:opacity-80 transition-opacity">
                 <img 
                   src="/assets/Bilgin_Ingenieurbüro_Logo_page-0001.png" 
                   alt="Bilgin Ingenieurbüro Logo" 
-                  className="h-12 md:h-14 object-contain brightness-0 invert"
+                  className="h-24 md:h-28 object-contain brightness-0 invert"
                 />
               </Link>
               <Link href="/" className="hover:opacity-80 transition-opacity">
                 <img 
                   src="/assets/deca_architektur_logo_page-0001.png" 
                   alt="Deca Architektur Logo" 
-                  className="h-12 md:h-14 object-contain brightness-0 invert"
+                  className="h-20 md:h-24 object-contain brightness-0 invert"
                 />
               </Link>
             </div>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Middle Column - Navigation */}
           <div className="flex flex-col items-center footer-social-icons">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#8B7355] mb-6">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-[#8B7355] mb-2">
               {language === 'DE' ? 'Navigation' : 'Menü'}
             </h3>
             <nav className="flex flex-col items-center gap-3">
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Right Column - Contact & Social */}
           <div className="flex flex-col items-center md:items-end footer-social-icons">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#8B7355] mb-6">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-[#8B7355] mb-2">
               {t('footer.contact')}
             </h3>
             <div className="text-gray-300 text-sm text-center md:text-right space-y-2">

@@ -1,8 +1,5 @@
 'use client';
 
-// SOLID: Single Responsibility Principle - ProjectsSection handles project display
-// SOLID: Dependency Inversion Principle - Uses ProjectService interface
-
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,7 +21,7 @@ export default function ProjectsSection() {
   return (
     <>
       {/* Hero Cover Image with Title */}
-      <section className="relative w-full h-screen overflow-hidden hero-section">
+      <section className="relative w-full h-screen overflow-hidden">
         <Image
           src="/assets/projekt_4/PHOTO-2025-11-30-14-50-46 3.jpg"
           alt="Projects Cover"
@@ -50,16 +47,16 @@ export default function ProjectsSection() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 md:py-24 bg-white">
+      <section id="projects" className="pt-12 md:pt-16 pb-0 md:pb-0 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           {/* Subtitle with decorative divider */}
           <div className="flex flex-col items-center">
             {/* Decorative divider above text */}
-            <div className="w-12 md:w-16 h-px bg-[#D1D5DB] mb-6"></div>
+            <div className="w-12 md:w-16 h-px bg-[#D1D5DB] mb-2"></div>
             
             {/* Subtitle text */}
             <p 
-              className="text-sm md:text-base text-[#4B5563] text-center max-w-2xl mx-auto font-light leading-relaxed" 
+              className="text-sm md:text-base text-[#4B5563] mb-4 text-center max-w-2xl mx-auto font-light leading-relaxed" 
               style={{ 
                 textTransform: 'none', 
                 fontVariant: 'normal',
@@ -72,7 +69,7 @@ export default function ProjectsSection() {
           </div>
           
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5">
             {allProjects.map((project) => (
               <Link 
                 key={project.id} 
@@ -99,16 +96,16 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 md:p-8">
+                <div className="p-3 md:p-4">
                   {/* Location Tag */}
                   {project.location && (
-                    <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-3 font-medium">
+                    <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-medium">
                       {t('projects.region')} {project.location.toUpperCase()} | {project.status === 'completed' ? t('projects.chalet') : t('projects.projekt')}
                     </p>
                   )}
 
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 text-black font-amoret uppercase tracking-tight group-hover:text-[#8B7355] transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black font-amoret uppercase tracking-tight group-hover:text-[#8B7355] transition-colors duration-300">
                     {t(`projects.project${project.id}.title`)}
                   </h3>
 
@@ -118,7 +115,7 @@ export default function ProjectsSection() {
                   </p>
 
                   {/* View More Arrow */}
-                  <div className="mt-4 flex items-center text-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center text-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-sm font-medium uppercase tracking-wide mr-2">
                       {t('projects.details')}
                     </span>

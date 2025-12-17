@@ -54,19 +54,31 @@ export default function ContactSection() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="w-full">
+          <div className="w-full text-center">
             {/* Title - Haritanın altında */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight page-title">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight text-[#8B7355] mb-4 md:mb-5 lg:mb-6">
               {t('contact.title')}
             </h1>
-            {/* Accent line under title */}
-            <div className="w-16 h-0.5 bg-[#8B7355] mx-auto mb-6"></div>
+            
+            {/* Decorative divider */}
+            <div className="w-12 md:w-16 h-px bg-gray-300 mx-auto mb-2 md:mb-2.5"></div>
+            
             {/* Subtitle for better context */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto" style={{ marginBottom: '24px' }}>
-              {subtitleText}
-            </p>
+            <div className="max-w-3xl mx-auto">
+              <p 
+                className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center leading-relaxed font-light italic mb-8" 
+                style={{ 
+                  textTransform: 'none', 
+                  fontVariant: 'normal',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.7'
+                }}
+              >
+                {subtitleText}
+              </p>
+            </div>
           </div>
 
           {/* Contact Info Cards - Modern card design */}
@@ -93,10 +105,10 @@ export default function ContactSection() {
                   href={googleMapsShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ marginBottom: '24px', marginTop: '12px', padding: '4px' }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-white text-sm font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-base font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200 mt-3 mb-6 p-1"
+                  style={{ color: '#ffffff' }}
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                   {t('contact.viewOnMaps')}
@@ -122,10 +134,10 @@ export default function ContactSection() {
                 {/* CTA Button */}
                 <a
                   href={`tel:${t('contact.phone')}`}
-                  style={{ marginBottom: '24px', marginTop: '12px', padding: '4px' }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-white text-sm font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-base font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200 mt-3 mb-6 p-1"
+                  style={{ color: '#ffffff' }}
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                   </svg>
                   {language === 'DE' ? 'Anrufen' : 'Hemen Ara'}
@@ -151,10 +163,10 @@ export default function ContactSection() {
                 {/* CTA Button */}
                 <a
                   href={`mailto:${t('contact.email')}`}
-                  style={{ marginBottom: '24px', marginTop: '12px', padding: '4px' }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-white text-sm font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#8B7355] text-base font-medium rounded-lg hover:bg-[#7a6349] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2 transition-colors duration-200 mt-3 mb-6 p-1"
+                  style={{ color: '#ffffff' }}
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                   {language === 'DE' ? 'E-Mail senden' : 'E-posta Gönder'}

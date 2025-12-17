@@ -111,15 +111,29 @@ export default function ProjectDetailPage() {
       )}
       
       {/* Project Header */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-5 md:py-8 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="w-full">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight page-title">
+          <div className="w-full text-center mt-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight text-[#8B7355] mb-4 md:mb-5 lg:mb-6">
               {project.title}
             </h2>
-            <p className="text-base md:text-lg text-gray-700 text-center leading-relaxed normal-case" style={{ textTransform: 'none', fontVariant: 'normal' }}>
-              {project.description}
-            </p>
+            
+            {/* Decorative divider */}
+            <div className="w-12 md:w-16 h-px bg-gray-300 mx-auto mb-2 md:mb-2.5"></div>
+            
+            <div className="max-w-3xl mx-auto">
+              <p 
+                className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center leading-relaxed font-light italic" 
+                style={{ 
+                  textTransform: 'none', 
+                  fontVariant: 'normal',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.7'
+                }}
+              >
+                {project.description}
+              </p>
+            </div>
           </div>
         </div>
       </section>
