@@ -56,7 +56,7 @@ export default function ContactSection() {
       {/* Contact Information Section */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="w-full text-center">
+          <div className="w-full text-center mb-8 md:mb-10 lg:mb-12">
             {/* Title - Haritanın altında */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight text-[#8B7355] mb-4 md:mb-5 lg:mb-6">
               {t('contact.title')}

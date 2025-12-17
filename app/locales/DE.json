@@ -83,32 +83,32 @@
     "details": "Details",
     "noImage": "Projektbild",
     "project1": {
-      "title": "CHALET OLW44",
-      "description": "Repräsentatives Luxus-Chalet der Superlative."
+      "title": "Einfamilienhaus",
+      "description": "Hochwertiges, luxuriöses Einfamilienhaus in exklusiver Ausführung."
     },
     "project2": {
-      "title": "ASTBERGHOF",
-      "description": "Modernes Wohnhaus mit zeitgemäßem Design und nachhaltigen Materialien."
+      "title": "Einfamilienhaus",
+      "description": "Modernes Einfamilienhaus mit zeitgemäßem Design und nachhaltigen Materialien."
     },
     "project3": {
-      "title": "CHALET K23",
-      "description": "Hochwertige Residenz mit traditioneller Architektur und modernem Komfort."
+      "title": "Einfamilienhaus",
+      "description": "Hochwertiges Einfamilienhaus mit traditioneller Architektur und modernem Komfort."
     },
     "project4": {
-      "title": "MODERNES WOHNHAUS",
-      "description": "Zeitgemäßes Design mit nachhaltigen Materialien und innovativen Lösungen."
+      "title": "Mehrfamilienhaus",
+      "description": "Zeitgemäßes Mehrfamilienhaus mit nachhaltigen Materialien und innovativen Lösungen."
     },
     "project5": {
-      "title": "CHALET PROJEKT ALPHA",
-      "description": "Neues Chalet-Projekt in Planung mit atemberaubendem Alpenblick."
+      "title": "Werstatt und Bürogebäude",
+      "description": "Moderner Werkstatt- und Bürokomplex für Funktionalität und Effizienz."
     },
     "project6": {
-      "title": "VILLA PROJEKT BETA",
-      "description": "Luxuriöse Villa in Entwicklung mit exklusivem Seeblick."
+      "title": "Studentenwohnheim",
+      "description": "Studentenwohnheim mit komfortablen Wohnräumen und modernen Einrichtungen."
     },
     "project7": {
-      "title": "RESIDENZ PROJEKT GAMMA",
-      "description": "Exklusive Residenz in Planung mit hochwertiger Architektur."
+      "title": "Reihenhäuser",
+      "description": "Hochwertiger Reihenhauskomplex mit moderner Architektur."
     }
   },
   "contact": {

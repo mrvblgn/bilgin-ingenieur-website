@@ -14,8 +14,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [padding, setPadding] = useState({ left: 24, right: 24, top: 12, bottom: 12 });
 
-  const getLocalizedHref = (key: string): string => {
-    if (language === 'DE') {
+  const getLocalizedHref = (key: string, lang?: 'TR' | 'DE'): string => {
+    const targetLanguage = lang || language;
+    if (targetLanguage === 'DE') {
       const deRoutes: { [key: string]: string } = {
         home: '/',
         services: '/leistungen',
@@ -37,6 +38,11 @@ export default function Header() {
   };
 
   const getCurrentPageKey = (path: string): string => {
+    // Check if it's a project detail page
+    if (path.startsWith('/projekt/') || path.startsWith('/proje/')) {
+      return 'projects'; // Redirect to projects list when switching language
+    }
+    
     const deToKey: { [key: string]: string } = {
       '/': 'home',
       '/leistungen': 'services',
@@ -53,15 +59,30 @@ export default function Header() {
     };
     return deToKey[path] || trToKey[path] || 'home';
   };
+  
+  // Get project ID from URL (for project detail pages)
+  const getProjectIdFromPath = (path: string): string | null => {
+    const projektMatch = path.match(/^\/projekt\/(.+)$/);
+    const projeMatch = path.match(/^\/proje\/(.+)$/);
+    return projektMatch?.[1] || projeMatch?.[1] || null;
+  };
 
   // Handle language change and redirect to corresponding page
   const handleLanguageChange = (newLanguage: 'TR' | 'DE') => {
     if (newLanguage === language) return;
     
+    // Check if we're on a project detail page
+    const projectId = getProjectIdFromPath(pathname);
+    if (projectId) {
+      // Redirect to same project in different language
+      const newHref = newLanguage === 'DE' ? `/projekt/${projectId}` : `/proje/${projectId}`;
+      setLanguage(newLanguage);
+      router.push(newHref);
+      return;
+    }
+    
     const currentPageKey = getCurrentPageKey(pathname);
-    const newHref = newLanguage === 'DE' 
-      ? getLocalizedHref(currentPageKey)
-      : getLocalizedHref(currentPageKey);
+    const newHref = getLocalizedHref(currentPageKey, newLanguage);
     
     setLanguage(newLanguage);
     router.push(newHref);

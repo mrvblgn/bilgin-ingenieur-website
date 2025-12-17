@@ -83,32 +83,32 @@
     "details": "Detaylar",
     "noImage": "Proje Görseli",
     "project1": {
-      "title": "CHALET OLW44",
-      "description": "Üstün kaliteli, lüks temsil eden bir chalet."
+      "title": "Tek Aile Evi",
+      "description": "Üstün kaliteli, lüks tek aile için tasarlanmış özel müstakil ev."
     },
     "project2": {
-      "title": "ASTBERGHOF",
-      "description": "Çağdaş tasarım ve sürdürülebilir malzemelerle modern konut."
+      "title": "Tek Aile Evi",
+      "description": "Çağdaş tasarım ve sürdürülebilir malzemelerle modern tek aile konutu."
     },
     "project3": {
-      "title": "CHALET K23",
-      "description": "Geleneksel mimari ve modern konforla yüksek kaliteli rezidans."
+      "title": "Tek Aile Evi",
+      "description": "Geleneksel mimari ve modern konforla yüksek kaliteli tek aile konutu."
     },
     "project4": {
-      "title": "MODERN KONUT",
-      "description": "Sürdürülebilir malzemeler ve yenilikçi çözümlerle çağdaş tasarım."
+      "title": "Çok Aileli Bina",
+      "description": "Sürdürülebilir malzemeler ve yenilikçi çözümlerle çağdaş çok aileli konut binası."
     },
     "project5": {
-      "title": "CHALET PROJE ALPHA",
-      "description": "Nefes kesen Alp manzarası ile planlama aşamasında yeni chalet projesi."
+      "title": "Atölye ve Ofis Binası",
+      "description": "Modern işlevsellik ve verimlilik için tasarlanmış atölye ve ofis kompleksi."
     },
     "project6": {
-      "title": "VİLLA PROJE BETA",
-      "description": "Özel göl manzarası ile geliştirme aşamasında lüks villa."
+      "title": "Öğrenci Yurdu",
+      "description": "Konforlu yaşam alanları ve modern olanaklarla öğrenci konaklama tesisi."
     },
     "project7": {
-      "title": "REZİDANS PROJE GAMMA",
-      "description": "Yüksek kaliteli mimari ile planlama aşamasında özel rezidans."
+      "title": "Sıra Evler",
+      "description": "Yüksek kaliteli mimari ile planlanmış modern sıra ev kompleksi."
     }
   },
   "contact": {

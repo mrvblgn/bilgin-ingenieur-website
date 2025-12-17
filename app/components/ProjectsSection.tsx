@@ -18,6 +18,11 @@ export default function ProjectsSection() {
     setAllProjects(projects);
   }, [language]);
 
+  // Get localized project detail URL
+  const getProjectDetailUrl = (projectId: string): string => {
+    return language === 'DE' ? `/projekt/${projectId}` : `/proje/${projectId}`;
+  };
+
   return (
     <>
       {/* Hero Cover Image with Title */}
@@ -52,20 +57,22 @@ export default function ProjectsSection() {
           {/* Subtitle with decorative divider */}
           <div className="flex flex-col items-center">
             {/* Decorative divider above text */}
-            <div className="w-12 md:w-16 h-px bg-[#D1D5DB] mb-2"></div>
+            <div className="w-12 md:w-16 h-px bg-gray-300 mb-2 md:mb-2.5"></div>
             
             {/* Subtitle text */}
-            <p 
-              className="text-sm md:text-base text-[#4B5563] mb-4 text-center max-w-2xl mx-auto font-light leading-relaxed" 
-              style={{ 
-                textTransform: 'none', 
-                fontVariant: 'normal',
-                letterSpacing: '0.3px',
-                fontWeight: 300
-              }}
-            >
-              {t('projects.subtitle')}
-            </p>
+            <div className="max-w-3xl mx-auto mb-4 md:mb-5 lg:mb-6">
+              <p 
+                className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center leading-relaxed font-light italic" 
+                style={{ 
+                  textTransform: 'none', 
+                  fontVariant: 'normal',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.7'
+                }}
+              >
+                {t('projects.subtitle')}
+              </p>
+            </div>
           </div>
           
           {/* Projects Grid */}
@@ -73,8 +80,8 @@ export default function ProjectsSection() {
             {allProjects.map((project) => (
               <Link 
                 key={project.id} 
-                href={`/projekt/${project.id}`} 
-                className="group block bg-white overflow-hidden transition-all duration-300 hover:shadow-2xl project-card"
+                href={getProjectDetailUrl(project.id)} 
+                className="group block bg-white overflow-hidden transition-all duration-300 hover:shadow-2xl project-card min-w-0"
               >
                 {/* Project Image */}
                 <div className="relative w-full aspect-[4/5] overflow-hidden project-card-image">
@@ -105,7 +112,7 @@ export default function ProjectsSection() {
                   )}
 
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black font-amoret uppercase tracking-tight group-hover:text-[#8B7355] transition-colors duration-300">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-black font-amoret uppercase tracking-tight group-hover:text-[#8B7355] transition-colors duration-300 leading-tight">
                     {t(`projects.project${project.id}.title`)}
                   </h3>
 
@@ -115,7 +122,7 @@ export default function ProjectsSection() {
                   </p>
 
                   {/* View More Arrow */}
-                  <div className="flex items-center text-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center text-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
                     <span className="text-sm font-medium uppercase tracking-wide mr-2">
                       {t('projects.details')}
                     </span>

@@ -5,16 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectService } from '../services/ProjectService';
 import { ProjectRepository } from '../repositories/ProjectRepository';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const projectService = new ProjectService(new ProjectRepository());
 
 export default function ProjectSlider() {
+  const { language } = useLanguage();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
   const projects = projectService.getAllProjects('completed').slice(0, 7); // İlk 7 tamamlanan proje
+  
+  // Get localized project detail URL
+  const getProjectDetailUrl = (projectId: string): string => {
+    return language === 'DE' ? `/projekt/${projectId}` : `/proje/${projectId}`;
+  };
 
   // Scroll functions
   const scroll = (direction: 'left' | 'right') => {
@@ -111,7 +118,7 @@ export default function ProjectSlider() {
         {projects.map((project) => (
           <Link
             key={project.id}
-            href={`/projekt/${project.id}`}
+            href={getProjectDetailUrl(project.id)}
             className="flex-shrink-0 snap-center group project-slider-card"
           >
             <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.02]">

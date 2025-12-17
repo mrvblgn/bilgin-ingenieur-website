@@ -5,16 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectService } from '../services/ProjectService';
 import { ProjectRepository } from '../repositories/ProjectRepository';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const projectService = new ProjectService(new ProjectRepository());
 
 export default function ProjectCarousel() {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [windowWidth, setWindowWidth] = useState(1920);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const projects = projectService.getAllProjects('completed');
+  
+  // Get localized project detail URL
+  const getProjectDetailUrl = (projectId: string): string => {
+    return language === 'DE' ? `/projekt/${projectId}` : `/proje/${projectId}`;
+  };
   
   // Ensure we have enough projects for infinite loop (triple for seamless looping)
   const extendedProjects = [...projects, ...projects, ...projects];
@@ -131,7 +138,7 @@ export default function ProjectCarousel() {
           return (
             <Link
               key={`${project.id}-${index}`}
-              href={`/projekt/${project.id}`}
+              href={getProjectDetailUrl(project.id)}
               className="flex-shrink-0 group"
               style={{
                 width: `${cardWidthVw}vw`,

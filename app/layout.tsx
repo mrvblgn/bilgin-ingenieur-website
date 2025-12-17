@@ -14,8 +14,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MACH Architektur | Innovative Architektur, die Natur und Luxus vereint",
-  description: "Entdecken Sie maßgeschneiderte Chalets und exklusive Designlösungen von MACH Architekten in den Kitzbüheler Alpen und der bayrischen Seenregion.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.example.com'),
+  title: {
+    default: "Bilgin Ingenieurbüro & Deca Architektur | Architektur- und Ingenieurdienstleistungen",
+    template: "%s | Bilgin Ingenieurbüro & Deca Architektur"
+  },
+  description: "Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung. Professionelle Planung, Bauanträge und Ausführungspläne.",
+  keywords: ["Architektur", "Ingenieurbüro", "Heilbronn", "Bauplanung", "Architekturplanung", "Mimarlık", "İnşaat Mühendisliği"],
+  authors: [{ name: "Bilgin Ingenieurbüro & Deca Architektur" }],
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    alternateLocale: "tr_TR",
+    siteName: "Bilgin Ingenieurbüro & Deca Architektur",
+    title: "Bilgin Ingenieurbüro & Deca Architektur",
+    description: "Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" suppressHydrationWarning>
       <head>
         <link
           href="https://db.onlinewebfonts.com/c/38566e1fb22adb542cc0a4d11b7983f6?family=The+Amoret+Collection+Sans"
