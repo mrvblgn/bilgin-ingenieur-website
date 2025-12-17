@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { NavigationItem } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -12,7 +13,7 @@ export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [padding, setPadding] = useState({ left: 24, right: 24, top: 12, bottom: 12 });
+  const [padding, setPadding] = useState({ left: 24, right: 24, top: 0, bottom: 0 });
 
   const getLocalizedHref = (key: string, lang?: 'TR' | 'DE'): string => {
     const targetLanguage = lang || language;
@@ -158,20 +159,26 @@ export default function Header() {
                 href="/"
                 className="hover:opacity-80 transition-opacity header-logo-container"
               >
-                <img 
+                <Image 
                   src="/assets/Bilgin_Ingenieurbüro_Logo_page-0001.png" 
                   alt="Bilgin Ingenieurbüro Logo" 
-                  className="header-logo-img"
+                  width={200}
+                  height={80}
+                  className="header-logo-img object-contain"
+                  priority
                 />
               </Link>
               <Link 
                 href="/"
                 className="hover:opacity-80 transition-opacity header-logo-container"
               >
-                <img 
+                <Image 
                   src="/assets/deca_architektur_logo_page-0001.png" 
                   alt="Deca Architektur Logo" 
-                  className="header-logo-img"
+                  width={200}
+                  height={80}
+                  className="header-logo-img object-contain"
+                  priority
                 />
               </Link>
             </div>

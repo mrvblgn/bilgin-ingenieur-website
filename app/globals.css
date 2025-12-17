@@ -25,9 +25,11 @@
   margin: 0;
   padding: 0;
   line-height: 0;
-  display: block;
-  overflow: hidden;
-  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  max-height: 100%;
 }
 
 .header-logo-img {
@@ -35,27 +37,25 @@
   padding: 0;
   display: block;
   height: 80px;
-  margin-top: -12px;
-  object-fit: cover;
+  width: auto;
+  object-fit: contain;
 }
 
 @media (min-width: 768px) {
   .header-logo-container {
-    height: 72px;
+    height: auto;
   }
   .header-logo-img {
-    height: 100px;
-    margin-top: -14px;
+    height: 96px;
   }
 }
 
 @media (min-width: 1024px) {
   .header-logo-container {
-    height: 80px;
+    height: auto;
   }
   .header-logo-img {
     height: 112px;
-    margin-top: -16px;
   }
 }
 

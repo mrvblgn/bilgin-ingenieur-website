@@ -124,11 +124,11 @@ export default function AboutContactSection() {
           <div className="generalplaner-content generalplaner-section">
             <h2 className="font-amoret generalplaner-title">
               {t('about.generalplanerTitle1')}
-            </h2>
+              </h2>
             
             <p className="generalplaner-text">
-              {t('about.generalplanerText')}
-            </p>
+                {t('about.generalplanerText')}
+              </p>
           </div>
 
           {/* Right - Image */}
@@ -178,8 +178,8 @@ export default function AboutContactSection() {
             </h2>
             
             <p className="generalplaner-text" style={{ marginBottom: 0 }}>
-              {t('about.generalplanerText2')}
-            </p>
+                {t('about.generalplanerText2')}
+              </p>
           </div>
         </div>
       </section>
@@ -188,22 +188,22 @@ export default function AboutContactSection() {
       <section className="team-section">
         <div className="team-container">
           <h2 className="font-amoret team-title">
-            {t('about.teamTitle')}
-          </h2>
+                {t('about.teamTitle')}
+              </h2>
           <p className="team-subtitle">
-            {t('about.teamSubtitle')}
-          </p>
+                {t('about.teamSubtitle')}
+              </p>
 
-          {/* Team Members */}
+            {/* Team Members */}
           <div className="team-members">
-            {teamMembers.map((member) => (
+              {teamMembers.map((member) => (
               <div key={member.id} className="team-member">
                 <div className="team-member-image">
                   <img src={member.image} alt={member.name} />
-                </div>
+                    </div>
                 <h3 className="font-amoret team-member-name">
-                  {member.name}
-                </h3>
+                      {member.name}
+                    </h3>
                 <p className="team-member-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                   {/* Mezuniyet/Diploma ikonu - Meslek */}
                   <svg style={{ width: '16px', height: '16px', color: '#8B7355' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,8 +211,8 @@ export default function AboutContactSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
-                  {member.title}
-                </p>
+                      {member.title}
+                    </p>
                 <p className="team-member-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>        
                   {/* Yıldız ikonu - Kurucu */}
                   <svg style={{ width: '16px', height: '16px', color: '#8B7355' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,16 +220,16 @@ export default function AboutContactSection() {
                   </svg>
                   {member.title2}
                 </p>
-                {member.email && (
+                    {member.email && (
                   <a href={`mailto:${member.email}`} className="team-member-email" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                     <svg style={{ width: '14px', height: '14px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    {member.email}
-                  </a>
-                )}
-              </div>
-            ))}
+                        {member.email}
+                      </a>
+                    )}
+                </div>
+              ))}
           </div>
         </div>
       </section>

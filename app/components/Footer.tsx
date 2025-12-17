@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
@@ -33,27 +34,31 @@ export default function Footer() {
     <footer className="bg-[#1a1a1a] text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-center">
           
           {/* Left Column - Logos & Description */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start justify-center h-full">
             <div className="flex items-center">
-              <Link href="/" className="hover:opacity-80 transition-opacity">
-                <img 
+              <Link href="/" className="hover:opacity-80 transition-opacity block">
+                <Image 
                   src="/assets/Bilgin_Ingenieurbüro_Logo_page-0001.png" 
                   alt="Bilgin Ingenieurbüro Logo" 
-                  className="h-24 md:h-28 object-contain brightness-0 invert"
+                  width={180}
+                  height={100}
+                  className="h-20 md:h-24 w-auto object-contain brightness-0 invert"
                 />
               </Link>
-              <Link href="/" className="hover:opacity-80 transition-opacity">
-                <img 
+              <Link href="/" className="hover:opacity-80 transition-opacity block -ml-2">
+                <Image 
                   src="/assets/deca_architektur_logo_page-0001.png" 
                   alt="Deca Architektur Logo" 
-                  className="h-20 md:h-24 object-contain brightness-0 invert"
+                  width={180}
+                  height={86}
+                  className="h-16 md:h-20 w-auto object-contain brightness-0 invert"
                 />
               </Link>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed text-center md:text-left max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed text-center md:text-left max-w-xs -mt-2">
               {language === 'DE' 
                 ? 'Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung.'
                 : 'Heilbronn ve çevresinde mimarlık ve mühendislik hizmetleri.'
@@ -66,7 +71,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-widest text-[#8B7355] mb-2">
               {language === 'DE' ? 'Navigation' : 'Menü'}
             </h3>
-            <nav className="flex flex-col items-center gap-3">
+            <nav className="flex flex-col items-center gap-2">
               <Link href={getLocalizedHref('services')} className="text-gray-300 hover:text-white transition-colors text-sm uppercase tracking-wide">
                 {t('footer.services')}
               </Link>
