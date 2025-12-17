@@ -88,24 +88,30 @@ export default function Hero() {
       </div>
 
       {/* Text Content Section - Alt Bölüm */}
-      <div className="bg-white py-20 md:py-32">
+      <div className="bg-white py-8 md:py-10 lg:py-12">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="w-full">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight page-title">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-amoret uppercase tracking-tight text-[#8B7355] text-center">
               {t('hero.title')}
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed normal-case" style={{ textTransform: 'none', fontVariant: 'normal' }}>
-              {t('hero.subtitle')}
-            </p>
-            <Button
-              onClick={() => {
-                const element = document.querySelector('#real-estate');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-sm md:text-base font-medium tracking-wide uppercase font-amoret transition-colors"
-            >
-              {t('hero.cta')}
-            </Button>
+            
+            {/* Decorative divider */}
+            <div className="w-12 md:w-16 h-px bg-gray-300 mx-auto mb-2 md:mb-2.5"></div>
+            
+            {/* Subtitle - Editorial style */}
+            <div className="max-w-3xl mx-auto">
+              <p 
+                className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center leading-relaxed font-light italic" 
+                style={{ 
+                  textTransform: 'none', 
+                  fontVariant: 'normal',
+                  letterSpacing: '0.01em',
+                  lineHeight: '1.7'
+                }}
+              >
+                {t('hero.subtitle')}
+              </p>
+            </div>
           </div>
         </div>
       </div>

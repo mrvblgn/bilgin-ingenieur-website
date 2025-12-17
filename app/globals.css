@@ -12,9 +12,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* Tailwind Preflight already handles all resets (margins, paddings, etc.)
+   We only keep box-sizing which is a best practice */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

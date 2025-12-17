@@ -3,8 +3,7 @@ import Hero from './components/Hero';
 import ProjectReelsCarousel from './components/ProjectReelsCarousel';
 import ProjectCarousel from './components/ProjectCarousel';
 import AboutSection from './components/AboutSection';
-import ServicesSection from './components/ServicesSection';
-import ProjectsSection from './components/ProjectsSection';
+import ServicesPreview from './components/ServicesPreview';
 import Footer from './components/Footer';
 
 /**
@@ -17,7 +16,7 @@ export default function Home() {
       <Hero />
       <ProjectCarousel />
       <AboutSection />
-      <ServicesSection />
+      <ServicesPreview />
       <ProjectReelsCarousel />
       <Footer />
     </main>

@@ -116,7 +116,7 @@ export default function ProjectReelsCarousel() {
 
   return (
     <section 
-      className="relative w-full min-h-[85vh] bg-[#c6b99a] overflow-hidden"
+      className="relative w-full min-h-[85vh] bg-[#c6b99a] overflow-hidden p-4 md:p-5 lg:p-6"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
