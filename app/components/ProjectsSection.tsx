@@ -104,12 +104,6 @@ export default function ProjectsSection() {
 
                 {/* Project Content */}
                 <div className="p-3 md:p-4">
-                  {/* Location Tag */}
-                  {project.location && (
-                    <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-medium">
-                      {t('projects.region')} {project.location.toUpperCase()} | {project.status === 'completed' ? t('projects.chalet') : t('projects.projekt')}
-                    </p>
-                  )}
 
                   {/* Title */}
                   <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-black font-amoret uppercase tracking-tight group-hover:text-[#8B7355] transition-colors duration-300 leading-tight">
