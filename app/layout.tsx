@@ -23,6 +23,16 @@ export const metadata: Metadata = {
   description: "Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung. Professionelle Planung, Bauanträge und Ausführungspläne.",
   keywords: ["Architektur", "Ingenieurbüro", "Heilbronn", "Bauplanung", "Architekturplanung", "Mimarlık", "İnşaat Mühendisliği"],
   authors: [{ name: "Bilgin Ingenieurbüro & Deca Architektur" }],
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",
