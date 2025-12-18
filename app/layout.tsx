@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.example.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bilgin-ingenieurbuero.de'),
   title: {
     default: "Bilgin Ingenieurbüro & Deca Architektur | Architektur- und Ingenieurdienstleistungen",
     template: "%s | Bilgin Ingenieurbüro & Deca Architektur"
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   description: "Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung. Professionelle Planung, Bauanträge und Ausführungspläne.",
   keywords: ["Architektur", "Ingenieurbüro", "Heilbronn", "Bauplanung", "Architekturplanung", "Mimarlık", "İnşaat Mühendisliği"],
   authors: [{ name: "Bilgin Ingenieurbüro & Deca Architektur" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",
