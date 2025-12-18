@@ -36,7 +36,7 @@
   margin: 0;
   padding: 0;
   display: block;
-  height: 80px;
+  height: 70px;
   width: auto;
   object-fit: contain;
 }
@@ -46,7 +46,7 @@
     height: auto;
   }
   .header-logo-img {
-    height: 96px;
+    height: 86px;
   }
 }
 
@@ -55,7 +55,7 @@
     height: auto;
   }
   .header-logo-img {
-    height: 112px;
+    height: 102px;
   }
 }
 
