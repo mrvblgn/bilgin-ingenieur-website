@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function ContactSection() {
   const { t, language } = useLanguage();
   const [headerHeight, setHeaderHeight] = useState(72);
+  const [mapsConsent, setMapsConsent] = useState(false);
 
   useEffect(() => {
     const updateHeaderHeight = () => {
@@ -25,6 +26,24 @@ export default function ContactSection() {
     return () => window.removeEventListener('resize', updateHeaderHeight);
   }, []);
 
+  // Check cookie consent for Google Maps
+  useEffect(() => {
+    const checkCookieConsent = () => {
+      const cookiePreferences = localStorage.getItem('cookiePreferences');
+      if (cookiePreferences) {
+        const preferences = JSON.parse(cookiePreferences);
+        // Google Maps requires functional cookies
+        setMapsConsent(preferences.functional || preferences.necessary);
+      }
+    };
+
+    checkCookieConsent();
+    
+    // Listen for cookie consent updates
+    window.addEventListener('cookieConsentUpdated', checkCookieConsent);
+    return () => window.removeEventListener('cookieConsentUpdated', checkCookieConsent);
+  }, []);
+
   // Google Maps paylaşım linki
   const googleMapsShareUrl = "https://share.google/ibv6FysYOrlL2E0tB";
   
@@ -40,17 +59,41 @@ export default function ContactSection() {
   return (
     <>
       {/* Hero Map Section - Header'ın tam altında, boşluksuz */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden" style={{ marginTop: `${headerHeight}px` }}>
-        <iframe
-          src={mapsEmbedUrl}
-          width="100%"
-          height="100%"
-          style={{ border: 0, pointerEvents: 'auto' }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 w-full h-full"
-        ></iframe>
+      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100" style={{ marginTop: `${headerHeight}px` }}>
+        {mapsConsent ? (
+          <iframe
+            src={mapsEmbedUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0, pointerEvents: 'auto' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+            <div className="text-center px-4">
+              <p className="text-gray-600 mb-4">
+                {language === 'DE' 
+                  ? 'Um Google Maps anzuzeigen, akzeptieren Sie bitte funktionale Cookies in den Cookie-Einstellungen.'
+                  : 'Google Maps\'i görüntülemek için lütfen çerez ayarlarından işlevsel çerezleri kabul edin.'}
+              </p>
+              <button
+                onClick={() => {
+                  // Trigger cookie banner or show message
+                  const banner = document.querySelector('[data-cookie-banner]');
+                  if (banner) {
+                    banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                  }
+                }}
+                className="px-4 py-2 bg-[#8B7355] text-white rounded-lg hover:bg-[#7a6349] transition-colors"
+              >
+                {language === 'DE' ? 'Cookie-Einstellungen öffnen' : 'Çerez ayarlarını aç'}
+              </button>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Contact Information Section */}

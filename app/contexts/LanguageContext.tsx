@@ -24,6 +24,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         path.startsWith('/referenzen') || 
         path.startsWith('/uber-uns') || 
         path.startsWith('/kontakt') ||
+        path.startsWith('/impressum') ||
+        path.startsWith('/datenschutz') ||
         path.startsWith('/projekt/')) {
       return 'DE';
     }
@@ -32,6 +34,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         path.startsWith('/referanslar') || 
         path.startsWith('/hakkimizda') || 
         path.startsWith('/iletisim') ||
+        path.startsWith('/kunye') ||
+        path.startsWith('/gizlilik-politikasi') ||
         path.startsWith('/proje/')) {
       return 'TR';
     }

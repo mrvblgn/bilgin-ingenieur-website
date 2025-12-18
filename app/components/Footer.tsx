@@ -16,6 +16,8 @@ export default function Footer() {
         projects: '/referenzen',
         about: '/uber-uns',
         contact: '/kontakt',
+        impressum: '/impressum',
+        datenschutz: '/datenschutz',
       };
       return deRoutes[key] || '/';
     } else {
@@ -25,6 +27,8 @@ export default function Footer() {
         projects: '/referanslar',
         about: '/hakkimizda',
         contact: '/iletisim',
+        impressum: '/kunye',
+        datenschutz: '/gizlilik-politikasi',
       };
       return trRoutes[key] || '/';
     }
@@ -130,12 +134,32 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar - Copyright */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6">
-          <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Bilgin Ingenieurbüro & Deca Architektur. {language === 'DE' ? 'Alle Rechte vorbehalten.' : 'Tüm hakları saklıdır.'}
-          </p>
+      {/* Bottom Bar - Copyright & Legal Links */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto pt-1 pb-1">
+          <div className="flex flex-col items-center text-center gap-2">
+            {/* Legal Links - First Line */}
+            <div className="flex items-center justify-center gap-3">
+              <Link 
+                href={getLocalizedHref('impressum')} 
+                className="text-sm text-white/90 hover:text-white uppercase tracking-wider transition-colors font-light"
+              >
+                {t('footer.impressum')}
+              </Link>
+              <span className="text-white/40 text-sm">|</span>
+              <Link 
+                href={getLocalizedHref('datenschutz')} 
+                className="text-sm text-white/90 hover:text-white uppercase tracking-wider transition-colors font-light"
+              >
+                {t('footer.datenschutz')}
+              </Link>
+            </div>
+            
+            {/* Copyright - Second Line */}
+            <p className="text-xs text-white/60 font-light">
+              © {new Date().getFullYear()} {language === 'DE' ? 'Bilgin Ingenieurbüro & Deca Architektur' : 'Bilgin Ingenieurbüro & Deca Architektur'}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
