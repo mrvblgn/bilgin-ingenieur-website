@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   description: "Architektur- und Ingenieurdienstleistungen in Heilbronn und Umgebung. Professionelle Planung, Bauanträge und Ausführungspläne.",
   keywords: ["Architektur", "Ingenieurbüro", "Heilbronn", "Bauplanung", "Architekturplanung", "Mimarlık", "İnşaat Mühendisliği"],
   authors: [{ name: "Bilgin Ingenieurbüro & Deca Architektur" }],
+  icons: {
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",
@@ -52,9 +55,6 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.png" type="image/png" sizes="1024x1024" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="1024x1024" />
         <link
           href="https://db.onlinewebfonts.com/c/38566e1fb22adb542cc0a4d11b7983f6?family=The+Amoret+Collection+Sans"
           rel="stylesheet"
