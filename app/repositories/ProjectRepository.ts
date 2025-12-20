@@ -12,7 +12,7 @@ export class ProjectRepository implements IProjectRepository {
       description: 'Repräsentatives Luxus-Chalet der Superlative.',
       status: 'completed',
       location: 'Kitzbühel',
-      imageUrl: '/assets/projekt_1/PHOTO-2025-11-30-14-50-01.jpg',
+      imageUrl: '/assets/projekt_1/PHOTO-2025-11-30-14-50-02 2.jpg',
       images: [
         '/assets/projekt_1/PHOTO-2025-11-30-14-50-01.jpg',
         '/assets/projekt_1/PHOTO-2025-11-30-14-50-01 2.jpg',
@@ -29,7 +29,7 @@ export class ProjectRepository implements IProjectRepository {
       description: 'Modernes Wohnhaus mit zeitgemäßem Design und nachhaltigen Materialien.',
       status: 'completed',
       location: 'Bayern',
-      imageUrl: '/assets/projekt_2/PHOTO-2025-11-30-14-50-15.jpg',
+      imageUrl: '/assets/projekt_2/PHOTO-2025-11-30-14-50-15 8.jpg',
       images: [
         '/assets/projekt_2/PHOTO-2025-11-30-14-50-15.jpg',
         '/assets/projekt_2/PHOTO-2025-11-30-14-50-15 2.jpg',
@@ -49,7 +49,7 @@ export class ProjectRepository implements IProjectRepository {
       description: 'Hochwertige Residenz mit traditioneller Architektur und modernem Komfort.',
       status: 'completed',
       location: 'Kitzbühel',
-      imageUrl: '/assets/projekt_3/PHOTO-2025-11-30-14-50-30.jpg',
+      imageUrl: '/assets/projekt_3/PHOTO-2025-11-30-14-50-31 5.jpg',
       images: [
         '/assets/projekt_3/PHOTO-2025-11-30-14-50-30.jpg',
         '/assets/projekt_3/PHOTO-2025-11-30-14-50-30 2.jpg',

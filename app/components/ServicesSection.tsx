@@ -51,7 +51,7 @@ export default function ServicesSection() {
       {/* Hero Cover Image with Title */}
       <section className="relative w-full h-screen overflow-hidden hero-section">
         <Image
-          src="/assets/projekt_3/PHOTO-2025-11-30-14-50-31 6.jpg"
+          src="/assets/projekt_2/PHOTO-2025-11-30-14-50-15 7.jpg"
           alt="Services Cover"
           fill
           className="object-cover"

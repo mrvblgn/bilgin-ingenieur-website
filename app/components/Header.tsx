@@ -164,7 +164,7 @@ export default function Header() {
                   alt="Bilgin Ingenieurbüro Logo" 
                   width={200}
                   height={80}
-                  className="header-logo-img object-contain"
+                  className="header-logo-img object-contain scale-120"
                   priority
                 />
               </Link>

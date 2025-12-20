@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Button from './ui/Button';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Hero() {
@@ -35,10 +34,22 @@ export default function Hero() {
     <section id="home" className="relative">
       {/* Images Section - Full Screen */}
       <div className="relative w-full h-screen overflow-hidden">
+        {/* Mobilde sadece tek fotoğraf göster */}
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            backgroundImage: `url('/assets/PHOTO-2025-11-30-14-48-45.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
+        {/* Desktop'ta carousel */}
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`hidden md:block absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === currentImageIndex ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
@@ -50,30 +61,30 @@ export default function Hero() {
           />
         ))}
 
-        {/* Left Arrow */}
+        {/* Left Arrow - Sadece desktop'ta görünür */}
         <button
           onClick={prevImage}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 p-2 text-white/70 hover:text-white transition-colors"
+          className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 z-10 p-2 text-white/70 hover:text-white transition-colors"
           aria-label="Previous image"
         >
-          <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        {/* Right Arrow */}
+        {/* Right Arrow - Sadece desktop'ta görünür */}
         <button
           onClick={nextImage}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-2 text-white/70 hover:text-white transition-colors"
+          className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 z-10 p-2 text-white/70 hover:text-white transition-colors"
           aria-label="Next image"
         >
-          <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
         
-        {/* Image Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
+        {/* Image Indicators - Sadece desktop'ta görünür */}
+        <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 gap-2">
           {images.map((_, index) => (
             <button
               key={index}
