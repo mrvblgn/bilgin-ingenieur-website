@@ -8,7 +8,7 @@ export class ProjectRepository implements IProjectRepository {
   private projects: Project[] = [
     {
       id: '1',
-      title: 'CHALET OLW44',
+      title: 'EINFAMILIENHAUS',
       description: 'Repräsentatives Luxus-Chalet der Superlative.',
       status: 'completed',
       location: 'Kitzbühel',
@@ -25,7 +25,7 @@ export class ProjectRepository implements IProjectRepository {
     },
     {
       id: '2',
-      title: 'ASTBERGHOF',
+      title: 'EINFAMILIENHAUS',
       description: 'Modernes Wohnhaus mit zeitgemäßem Design und nachhaltigen Materialien.',
       status: 'completed',
       location: 'Bayern',
@@ -45,7 +45,7 @@ export class ProjectRepository implements IProjectRepository {
     },
     {
       id: '3',
-      title: 'CHALET K23',
+      title: 'EINFAMILIENHAUS',
       description: 'Hochwertige Residenz mit traditioneller Architektur und modernem Komfort.',
       status: 'completed',
       location: 'Kitzbühel',
@@ -63,7 +63,7 @@ export class ProjectRepository implements IProjectRepository {
     },
     {
       id: '4',
-      title: 'MODERNES WOHNHAUS',
+      title: 'MEHRFAMILIENHAUS',
       description: 'Zeitgemäßes Design mit nachhaltigen Materialien und innovativen Lösungen.',
       status: 'completed',
       location: 'Kitzbühel',
