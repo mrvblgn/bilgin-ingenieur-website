@@ -76,23 +76,6 @@
   }
 }
 
-/* Map Section - Header altında kalmaması için garantili margin */
-.map-section-with-header {
-  /* Minimum margin garantisi - JavaScript headerHeight'i override edemezse */
-  margin-top: 75px !important;
-}
-
-@media (min-width: 768px) {
-  .map-section-with-header {
-    margin-top: 95px !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .map-section-with-header {
-    margin-top: 115px !important;
-  }
-}
 
 /* Footer Social Icons */
 footer .footer-social-icons {

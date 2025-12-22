@@ -13,19 +13,29 @@ export default function ContactSection() {
       // Header'ın gerçek yüksekliğini DOM'dan al
       const header = document.querySelector('header');
       if (header) {
+        // getBoundingClientRect() en doğru sonucu verir
         const rect = header.getBoundingClientRect();
-        const computedHeight = Math.ceil(rect.height);
+        const computedHeight = rect.height;
+        
+        // Kesin yükseklik - hiçbir minimum/maksimum kısıtlama yok
         if (computedHeight > 0) {
           setHeaderHeight(computedHeight);
         }
       }
     };
 
-    // İlk yükleme
-    updateHeaderHeight();
+    // İlk yükleme - DOM hazır olduğunda
+    if (document.readyState === 'complete') {
+      updateHeaderHeight();
+    } else {
+      window.addEventListener('load', updateHeaderHeight);
+    }
     
     // Header render olduktan sonra tekrar kontrol et (multiple checks for reliability)
     const timers = [
+      requestAnimationFrame(updateHeaderHeight),
+      setTimeout(updateHeaderHeight, 0),
+      setTimeout(updateHeaderHeight, 10),
       setTimeout(updateHeaderHeight, 50),
       setTimeout(updateHeaderHeight, 100),
       setTimeout(updateHeaderHeight, 200),
@@ -56,7 +66,14 @@ export default function ContactSection() {
     
     return () => {
       window.removeEventListener('resize', handleResize);
-      timers.forEach(timer => clearTimeout(timer));
+      window.removeEventListener('load', updateHeaderHeight);
+      timers.forEach(timer => {
+        if (typeof timer === 'number') {
+          clearTimeout(timer);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
       clearTimeout(resizeTimer);
       if (observer) {
         observer.disconnect();
@@ -96,10 +113,12 @@ export default function ContactSection() {
 
   return (
     <>
-      {/* Hero Map Section - Header'ın tam altında */}
+      {/* Hero Map Section - Header'ın tam altında, boşluksuz */}
       <section 
-        className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100 map-section-with-header"
-        style={{ marginTop: `${Math.max(headerHeight, 75)}px` }}
+        className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100"
+        style={{ 
+          marginTop: headerHeight > 0 ? `${headerHeight}px` : '0px'
+        }}
       >
         {mapsConsent ? (
           <iframe
