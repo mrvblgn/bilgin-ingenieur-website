@@ -32,8 +32,8 @@ export default function ContactSection() {
     }
     
     // Header render olduktan sonra tekrar kontrol et (multiple checks for reliability)
-    const timers = [
-      requestAnimationFrame(updateHeaderHeight),
+    const rafId = requestAnimationFrame(updateHeaderHeight);
+    const timeouts = [
       setTimeout(updateHeaderHeight, 0),
       setTimeout(updateHeaderHeight, 10),
       setTimeout(updateHeaderHeight, 50),
@@ -67,13 +67,8 @@ export default function ContactSection() {
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('load', updateHeaderHeight);
-      timers.forEach(timer => {
-        if (typeof timer === 'number') {
-          clearTimeout(timer);
-        } else {
-          cancelAnimationFrame(timer);
-        }
-      });
+      cancelAnimationFrame(rafId);
+      timeouts.forEach(timer => clearTimeout(timer));
       clearTimeout(resizeTimer);
       if (observer) {
         observer.disconnect();
