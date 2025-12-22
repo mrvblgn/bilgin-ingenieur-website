@@ -76,6 +76,24 @@
   }
 }
 
+/* Map Section - Header altında kalmaması için garantili margin */
+.map-section-with-header {
+  /* Minimum margin garantisi - JavaScript headerHeight'i override edemezse */
+  margin-top: 75px !important;
+}
+
+@media (min-width: 768px) {
+  .map-section-with-header {
+    margin-top: 95px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map-section-with-header {
+    margin-top: 115px !important;
+  }
+}
+
 /* Footer Social Icons */
 footer .footer-social-icons {
   margin-top: 6px !important;
@@ -116,6 +134,17 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Amoret font - self-hosted */
+@font-face {
+  font-family: "The Amoret Collection Sans";
+  src: url("/fonts/amoret-sans.woff2") format("woff2"),
+       url("/fonts/amoret-sans.woff") format("woff"),
+       url("/fonts/amoret-sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Amoret font for headings only */

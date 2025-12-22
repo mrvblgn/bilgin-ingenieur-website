@@ -10,20 +10,58 @@ export default function ContactSection() {
 
   useEffect(() => {
     const updateHeaderHeight = () => {
-      const width = window.innerWidth;
-      // Header yüksekliği: globals.css'deki .header-logo-container değerlerine göre
-      if (width >= 1024) {
-        setHeaderHeight(80); // desktop: 80px
-      } else if (width >= 768) {
-        setHeaderHeight(72); // tablet: 72px
-      } else {
-        setHeaderHeight(56); // mobil: 56px
+      // Header'ın gerçek yüksekliğini DOM'dan al
+      const header = document.querySelector('header');
+      if (header) {
+        const rect = header.getBoundingClientRect();
+        const computedHeight = Math.ceil(rect.height);
+        if (computedHeight > 0) {
+          setHeaderHeight(computedHeight);
+        }
       }
     };
 
+    // İlk yükleme
     updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-    return () => window.removeEventListener('resize', updateHeaderHeight);
+    
+    // Header render olduktan sonra tekrar kontrol et (multiple checks for reliability)
+    const timers = [
+      setTimeout(updateHeaderHeight, 50),
+      setTimeout(updateHeaderHeight, 100),
+      setTimeout(updateHeaderHeight, 200),
+      setTimeout(updateHeaderHeight, 500),
+    ];
+    
+    // Resize event'i için debounce
+    let resizeTimer: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateHeaderHeight, 100);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    // MutationObserver ile header değişikliklerini izle
+    const header = document.querySelector('header');
+    let observer: MutationObserver | null = null;
+    if (header) {
+      observer = new MutationObserver(updateHeaderHeight);
+      observer.observe(header, {
+        attributes: true,
+        childList: true,
+        subtree: true,
+        attributeFilter: ['style', 'class'],
+      });
+    }
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      timers.forEach(timer => clearTimeout(timer));
+      clearTimeout(resizeTimer);
+      if (observer) {
+        observer.disconnect();
+      }
+    };
   }, []);
 
   // Check cookie consent for Google Maps
@@ -58,8 +96,11 @@ export default function ContactSection() {
 
   return (
     <>
-      {/* Hero Map Section - Header'ın tam altında, boşluksuz */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100" style={{ marginTop: `${headerHeight}px` }}>
+      {/* Hero Map Section - Header'ın tam altında */}
+      <section 
+        className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-gray-100 map-section-with-header"
+        style={{ marginTop: `${Math.max(headerHeight, 75)}px` }}
+      >
         {mapsConsent ? (
           <iframe
             src={mapsEmbedUrl}

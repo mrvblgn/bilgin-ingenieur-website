@@ -55,10 +55,7 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        <link
-          href="https://db.onlinewebfonts.com/c/38566e1fb22adb542cc0a4d11b7983f6?family=The+Amoret+Collection+Sans"
-          rel="stylesheet"
-        />
+        {/* Amoret font is now self-hosted in public/fonts/ */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

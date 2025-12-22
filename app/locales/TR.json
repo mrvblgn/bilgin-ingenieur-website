@@ -7,7 +7,7 @@
     "contact": "İLETİŞİM"
   },
   "hero": {
-    "title": "Doğa ve Lüksü Birleştiren Yenilikçi Mimari",
+    "title": "Doğa ve Lüksü BİRLEŞTİREN YENİLİKÇİ MİMARİ",
     "subtitle": "Heilbronn ve tüm Almanya'da mimarlık ve mühendislik hizmetleri. Bilgin Ingenieurbüro & Deca Architektur'dan profesyonel planlama, yapı ruhsatı ve uygulama projeleri.",
     "cta": "Gayrimenkullerimizi Keşfedin"
   },
@@ -16,16 +16,16 @@
     "pageIntro1": "Uzmanlarımızdan oluşan çeşitli kolektifimiz, yaratıcı sürecimizin temelini oluşturur ve mükemmel zanaatkarlığı yaratıcı tasarımla birleştirir.",
     "pageHighlight": "Kalıcı mekânlar tasarlıyoruz.",
     "pageIntro2": "Ortak taahhüdümüz ve bundan doğan çeşitli fikirler sayesinde, özel mimari ve mühendislik çözümleri geliştiriyoruz. Atmosfer, estetik ve dokunsallık konusunda ince bir anlayışla, yüksek kaliteli ve işlevsel konseptler yaratıyoruz. Doğal malzemelerin hedefli kullanımı ve kanıtlanmış inşaat kültürlerine saygılı yaklaşımımız, tasarımlarımızın büyük bir detay sevgisiyle ortaya çıkmasını sağlar.",
-    "generalplanerTitle1": "Deneyim ve Yetkinlik",
-    "generalplanerTitle2": "Estetik ve İşlevsellik",
+    "generalplanerTitle1": "DENEYİM ve YETKİNLİK",
+    "generalplanerTitle2": "ESTETİK ve İŞLEVSELLİK",
     "generalplanerText": "Mimarlık ve inşaat alanındaki uzun yıllara dayanan deneyimimiz, karmaşık gereksinimleri net ve uygulanabilir çözümlere dönüştürmemizi sağlar. Bu yetkinlik, her projede güvenilir ve kalıcı sonuçlar üretmemizin temelidir.",
     "generalplanerText2": "Her projede, estetik değerleri işlevsellik ile birleştirerek zamansız mekânlar tasarlıyoruz. Kaliteye olan bağlılığımız ve detaylara verdiğimiz önem, çalışmalarımızın ayırt edici unsurudur.",
     "intro1": "Bilgin Ingenieurbüro ve Deca Architektur, Heilbronn merkezli olarak tüm Almanya'da yenilikçi mimari ve mühendislik çözümleri sunan güvenilir ortaklarınızdır.",
     "intro2": "Yapı Ruhsatı, Uygulama Projesi ve İnşa alanlarında birinci sınıf hizmetlerle, projelerinizi ilk fikirden başarılı uygulamaya kadar deneyimli ekiplerimizle destekliyoruz.",
-    "teamTitle": "Ekibimiz",
+    "teamTitle": "EkİBİMİZ",
     "teamSubtitle": "Mimarlık ve mühendisliği bir araya getiren iki isim.",
     "member1": {
-      "name": "Bilal Bilgin",
+      "name": "BİLAL BİLGİN",
       "title": "İnşaat Mühendisi",
       "title2": "Kurucu Ortak",
       "description": "Modern tasarımda 15 yıldan fazla deneyim."
@@ -53,7 +53,7 @@
       ]
     },
     "service2": {
-      "title": "Planlama & Uygulama Projesi",
+      "title": "Planlama & Uygulama PROJESİ",
       "description": "Projenizin her aşamasında profesyonel planlama ve detaylı uygulama projeleri sunuyoruz:",
       "items": [
         "Tasarım planlaması",
@@ -83,31 +83,31 @@
     "details": "Detaylar",
     "noImage": "Proje Görseli",
     "project1": {
-      "title": "Tek Aile Evi",
+      "title": "TEK AİLE EVİ",
       "description": "Üstün kaliteli, lüks tek aile için tasarlanmış özel müstakil ev."
     },
     "project2": {
-      "title": "Tek Aile Evi",
+      "title": "TEK AİLE EVİ",
       "description": "Çağdaş tasarım ve sürdürülebilir malzemelerle modern tek aile konutu."
     },
     "project3": {
-      "title": "Tek Aile Evi",
+      "title": "TEK AİLE EVİ",
       "description": "Geleneksel mimari ve modern konforla yüksek kaliteli tek aile konutu."
     },
     "project4": {
-      "title": "Çok Aileli Bina",
+      "title": "ÇOK AİLELİ BİNA",
       "description": "Sürdürülebilir malzemeler ve yenilikçi çözümlerle çağdaş çok aileli konut binası."
     },
     "project5": {
-      "title": "Atölye ve Ofis Binası",
+      "title": "ATÖLYE ve OFİS BİNASI",
       "description": "Modern işlevsellik ve verimlilik için tasarlanmış atölye ve ofis kompleksi."
     },
     "project6": {
-      "title": "Öğrenci Yurdu",
+      "title": "ÖĞRENCİ YURDU",
       "description": "Konforlu yaşam alanları ve modern olanaklarla öğrenci konaklama tesisi."
     },
     "project7": {
-      "title": "Sıra Evler",
+      "title": "Sıra EVLER",
       "description": "Yüksek kaliteli mimari ile planlanmış modern sıra ev kompleksi."
     }
   },
